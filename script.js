@@ -37,7 +37,7 @@ function toggleTab(tab) {
 // Mobile carousel functionality
 function scrollToSlide(index) {
     const carousel = document.getElementById('carousel');
-    const slideWidth = 320; // 300px width + 20px gap
+    const slideWidth = 300; // CHANGE from 320 to 300
     carousel.scrollTo({
         left: index * slideWidth,
         behavior: 'smooth'
@@ -52,7 +52,7 @@ function scrollToSlide(index) {
 // Update active dot on scroll
 function updateActiveDot() {
     const carousel = document.getElementById('carousel');
-    const slideWidth = 320;
+    const slideWidth = 300; // CHANGE from 320 to 300
     const currentSlide = Math.round(carousel.scrollLeft / slideWidth);
     
     document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
