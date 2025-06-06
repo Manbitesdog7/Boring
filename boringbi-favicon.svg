@@ -1,0 +1,21 @@
+<svg width="16" height="16" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6,8 L6,32 L30,32 L30,8 Z" 
+        stroke="#DC2626" 
+        stroke-width="3" 
+        fill="none"/>
+  <path d="M30,8 L35,3 L35,27 L30,32" 
+        stroke="#DC2626" 
+        stroke-width="3" 
+        fill="none"/>
+  <path d="M6,32 L11,37 L35,37 L30,32" 
+        stroke="#DC2626" 
+        stroke-width="3" 
+        fill="none"/>
+  <text x="20" y="24" 
+        font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="12" 
+        font-weight="800" 
+        fill="#DC2626" 
+        text-anchor="middle" 
+        dominant-baseline="middle">B</text>
+</svg>
