@@ -708,6 +708,12 @@ body {
 .transformation-section {
     padding: 100px 20px;
     background: white;
+    overflow-x: hidden; 
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden; /* ADD THIS NEW RULE */
 }
 
 .section-header {
@@ -1050,13 +1056,14 @@ body {
 }
 
 .carousel-slide {
-    flex: 0 0 300px;
+    flex: 0 0 280px; /* CHANGE from 300px */
     scroll-snap-align: start;
     background: white;
     border: 1px solid #E5E7EB;
     border-radius: 12px;
-    padding: 24px;
+    padding: 20px; /* CHANGE from 24px */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* ADD THIS */
 }
 
 .carousel-slide .tab-header {
@@ -1101,28 +1108,45 @@ body {
 }
 
 @media (max-width: 768px) {
+    .transformation-section {
+        padding: 60px 15px; /* CHANGE from 100px 20px */
+        overflow-x: hidden; /* ADD THIS */
+    }
+    
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px; /* CHANGE from 60px */
     }
     
     .document-container {
-        height: 400px;
+        height: 350px; /* CHANGE from 400px */
+        justify-content: center; /* ADD THIS LINE */
     }
     
     .document-stack {
-        width: 280px;
-        height: 350px;
+        width: 260px; /* CHANGE from 280px */
+        height: 320px; /* CHANGE from 350px */
     }
     
     .document-sheet {
-        width: 240px;
-        height: 320px;
+        width: 220px; /* CHANGE from 240px */
+        height: 280px; /* CHANGE from 320px */
     }
     
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* CHANGE from 2.5rem */
+        margin-bottom: 16px; /* ADD THIS */
     }
+    
+    .section-subtitle {
+        font-size: 1.1rem; /* ADD THIS */
+        padding: 0 10px; /* ADD THIS */
+    }
+    
+    .section-header {
+        margin-bottom: 50px; /* CHANGE from 80px */
+    }
+}
     
     /* Hide desktop tabs on mobile */
     .features-tabs {
@@ -1132,5 +1156,31 @@ body {
     /* Show mobile carousel */
     .mobile-carousel {
         display: block;
+    }
+@media (max-width: 480px) {
+    .transformation-section {
+        padding: 40px 10px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .document-container {
+        height: 300px;
+    }
+    
+    .document-stack {
+        width: 220px;
+        height: 280px;
+    }
+    
+    .document-sheet {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 260px;
     }
 }
