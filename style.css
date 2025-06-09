@@ -896,14 +896,14 @@ body {
 }
 
 /* Mobile Carousel Styles - Hidden by default */
+
 .mobile-carousel {
     display: none;
 }
 
 .mobile-single-tab {
-    display: none;
+    display: none; /* Will be shown on mobile */
 }
-
 .carousel-container {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -1322,22 +1322,22 @@ body {
     
     /* SHOW MOBILE SINGLE TAB VIEW */
     .mobile-single-tab {
-        display: block;
-        max-width: 600px;
-        margin: 0 auto;
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
     }
     
     /* HIDE THE HORIZONTAL CAROUSEL */
     .mobile-carousel {
-        display: none;
+    display: block;
     }
     
     .carousel-container {
-        display: none;
+    display: none;
     }
-    
-    .carousel-dots {
-        display: none;
+
+.carousel-dots {
+    display: none;
     }
     
     /* MOBILE TAB STYLES */
