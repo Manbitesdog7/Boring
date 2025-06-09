@@ -560,7 +560,7 @@ body {
     left: 0;
 }
 
-/* FIXED TRANSFORMATION SECTION */
+/* TRANSFORMATION SECTION */
 .transformation-section {
     padding: 100px 20px;
     background: white;
@@ -593,7 +593,7 @@ body {
     margin: 0 auto;
 }
 
-/* FIXED FEATURES GRID - VERTICAL LAYOUT */
+/* FEATURES GRID - VERTICAL LAYOUT */
 .features-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -895,8 +895,12 @@ body {
     z-index: 10;
 }
 
-/* Mobile Carousel Styles */
+/* Mobile Carousel Styles - Hidden by default */
 .mobile-carousel {
+    display: none;
+}
+
+.mobile-single-tab {
     display: none;
 }
 
@@ -1169,8 +1173,9 @@ body {
     letter-spacing: -0.02em;
 }
 
-/* Enhanced responsive */
+/* MOBILE RESPONSIVE STYLES - ENHANCED VERSION */
 @media (max-width: 768px) {
+    /* Navigation */
     .nav {
         padding: 0 20px;
         height: 70px;
@@ -1180,6 +1185,7 @@ body {
         display: none;
     }
     
+    /* Hero */
     .hero {
         padding: 100px 20px 120px;
     }
@@ -1192,6 +1198,7 @@ body {
         font-size: 20px;
     }
     
+    /* Services and Process */
     .services, .process {
         padding: 100px 20px;
     }
@@ -1215,6 +1222,7 @@ body {
         font-size: 13px;
     }
     
+    /* Testimonials */
     .testimonials {
         padding: 100px 20px;
     }
@@ -1232,6 +1240,7 @@ body {
         padding: 32px;
     }
     
+    /* Contact CTA */
     .contact-cta {
         padding: 100px 20px;
     }
@@ -1240,6 +1249,7 @@ body {
         font-size: 36px;
     }
     
+    /* Footer */
     .footer {
         padding: 60px 20px 30px;
     }
@@ -1249,6 +1259,7 @@ body {
         gap: 30px;
     }
     
+    /* Logo */
     .boringbi-text {
         font-size: 1.1rem;
     }
@@ -1258,6 +1269,7 @@ body {
         height: 20px;
     }
     
+    /* Process */
     .process {
         padding: 100px 20px;
     }
@@ -1275,7 +1287,7 @@ body {
         padding: 32px;
     }
     
-    /* TRANSFORMATION SECTION MOBILE */
+    /* ENHANCED MOBILE TRANSFORMATION SECTION */
     .transformation-section {
         padding: 60px 15px;
         overflow: hidden;
@@ -1285,17 +1297,13 @@ body {
         gap: 40px;
     }
     
- .document-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 500px;
-    perspective: 1000px;
-    margin: 0 auto;
-    max-width: 600px; /* Increased width */
-    padding-right: 150px; /* Space for the hint */
-}
+    /* KEEP ANIMATION VISIBLE ON MOBILE */
+    .document-container {
+        height: 350px;
+        max-width: 300px;
+        justify-content: center;
+        padding-right: 0; /* Remove padding on mobile */
+    }
     
     .document-stack {
         width: 260px;
@@ -1305,6 +1313,142 @@ body {
     .document-sheet {
         width: 220px;
         height: 280px;
+    }
+    
+    /* HIDE DESKTOP TABS */
+    .features-tabs {
+        display: none;
+    }
+    
+    /* SHOW MOBILE SINGLE TAB VIEW */
+    .mobile-single-tab {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    /* HIDE THE HORIZONTAL CAROUSEL */
+    .mobile-carousel {
+        display: none;
+    }
+    
+    .carousel-container {
+        display: none;
+    }
+    
+    .carousel-dots {
+        display: none;
+    }
+    
+    /* MOBILE TAB STYLES */
+    .mobile-tab-container {
+        background: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+    
+    .mobile-tab-container.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .mobile-tab-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .mobile-tab-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+        flex-shrink: 0;
+        font-size: 1rem;
+    }
+    
+    .mobile-tab-info h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 4px;
+    }
+    
+    .mobile-tab-info p {
+        font-size: 0.9rem;
+        color: #6B7280;
+        margin: 0;
+    }
+    
+    .mobile-tab-content {
+        border-top: 1px solid #F3F4F6;
+        padding-top: 16px;
+    }
+    
+    .mobile-tab-description {
+        color: #374151;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-tab-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .mobile-tab-benefits li {
+        padding: 6px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        color: #374151;
+    }
+    
+    .mobile-tab-benefits li::before {
+        content: "✓";
+        color: #059669;
+        font-weight: 600;
+    }
+    
+    /* SCROLL TRIGGER INDICATOR */
+    .mobile-scroll-indicator {
+        text-align: center;
+        padding: 20px;
+        color: #6B7280;
+        font-size: 0.85rem;
+        font-style: italic;
+    }
+    
+    .scroll-arrow {
+        display: inline-block;
+        margin-left: 8px;
+        animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-5px);
+        }
+        60% {
+            transform: translateY(-3px);
+        }
     }
     
     .section-title {
@@ -1319,16 +1463,6 @@ body {
     
     .section-header {
         margin-bottom: 50px;
-    }
-    
-    /* Hide desktop tabs on mobile */
-    .features-tabs {
-        display: none;
-    }
-    
-    /* Show mobile carousel */
-    .mobile-carousel {
-        display: block;
     }
 }
 
@@ -1356,7 +1490,17 @@ body {
         height: 230px;
     }
     
-    .carousel-slide {
-        flex: 0 0 260px;
+    .mobile-tab-container {
+        padding: 16px;
+    }
+    
+    .mobile-tab-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-tab-info h3 {
+        font-size: 1rem;
     }
 }

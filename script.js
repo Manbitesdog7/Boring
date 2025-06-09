@@ -290,3 +290,59 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+// Mobile Single Tab Animation on Scroll
+function initMobileTabAnimation() {
+    if (window.innerWidth <= 768) {
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all mobile tab containers
+        document.querySelectorAll('.mobile-tab-container').forEach(tab => {
+            observer.observe(tab);
+        });
+    }
+}
+
+// Update your DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('BoringBI site loading...');
+    
+    // Set first service tab as active
+    const firstServiceTab = document.querySelector('.service-tab');
+    const firstServiceDetail = document.querySelector('.service-detail');
+    if (firstServiceTab && firstServiceDetail) {
+        firstServiceTab.classList.add('active');
+        firstServiceDetail.classList.add('active');
+    }
+    
+    // Set first feature tab as active
+    const firstFeatureTab = document.querySelector('.feature-tab');
+    if (firstFeatureTab) {
+        firstFeatureTab.classList.add('active');
+    }
+    
+    // Initialize mobile tab animation
+    initMobileTabAnimation();
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', initMobileTabAnimation);
+    
+    // Initialize other features
+    initSmoothScroll();
+    handleFormSubmission();
+    initScrollAnimations();
+    
+    console.log('BoringBI site fully loaded!');
+});

@@ -286,150 +286,34 @@
                 </div>
             </div>
             
-            <!-- Mobile Carousel -->
-            <div class="mobile-carousel">
-                <div class="carousel-container" id="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-assess">1</div>
-                                <div>
-                                    <div class="tab-title">Data Chaos Assessment</div>
-                                    <div class="tab-summary">Audit scattered files and broken processes</div>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We start by understanding the full scope of your data nightmare - from Excel files with #REF! errors to email chains about missing numbers.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Complete audit of all data sources</li>
-                                        <li>Identify broken formulas and inconsistencies</li>
-                                        <li>Map communication gaps between teams</li>
-                                        <li>Document current pain points and bottlenecks</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-slide">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-engineer">2</div>
-                                <div>
-                                    <div class="tab-title">Data Engineering</div>
-                                    <div class="tab-summary">Build robust pipelines and extraction processes</div>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">The boring backend work begins - we build the technical foundation that automatically handles data extraction, validation, and transformation.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Automated data extraction from all sources</li>
-                                        <li>Robust error handling and validation</li>
-                                        <li>Eliminate manual copy-paste processes</li>
-                                        <li>Built for scale and reliability</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-slide">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-pipeline">3</div>
-                                <div>
-                                    <div class="tab-title">Azure Data Factory Pipelines</div>
-                                    <div class="tab-summary">Orchestrate and automate data workflows</div>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">ADF pipelines ensure your data flows consistently and reliably, eliminating the "which version is correct?" problem forever.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Automated scheduling and orchestration</li>
-                                        <li>Real-time monitoring and alerts</li>
-                                        <li>Error recovery and retry logic</li>
-                                        <li>Scalable cloud-native architecture</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-slide">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-clean">4</div>
-                                <div>
-                                    <div class="tab-title">Data Cleaning & Standardization</div>
-                                    <div class="tab-summary">Fix formats, eliminate duplicates, resolve errors</div>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We fix all the messy data issues - standardizing date formats, eliminating duplicates, and creating consistent structures your business can trust.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Resolve #REF! and #VALUE! errors</li>
-                                        <li>Standardize date and number formats</li>
-                                        <li>Remove duplicate entries automatically</li>
-                                        <li>Create single source of truth</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-slide">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-model">5</div>
-                                <div>
-                                    <div class="tab-title">Data Modeling</div>
-                                    <div class="tab-summary">Design semantic layers and relationships</div>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We design semantic layers that connect your customer, sales, and financial data into one coherent, fast-performing model.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Logical data relationships and hierarchies</li>
-                                        <li>Optimized for query performance</li>
-                                        <li>Business-friendly naming conventions</li>
-                                        <li>Scalable dimensional modeling</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-slide">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-dashboard">6</div>
-                                <div>
-                                    <div class="tab-title">Beautiful Power BI Dashboards</div>
-                                    <div class="tab-summary">Transform chaos into crystal-clear insights</div>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">The payoff - stunning, interactive dashboards that turn your former data nightmare into clear, actionable business insights.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Interactive, real-time visualizations</li>
-                                        <li>Mobile-responsive design</li>
-                                        <li>Role-based access and security</li>
-                                        <li>Automated refresh and alerts</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Dot Navigation -->
-                <div class="carousel-dots">
-                    <div class="carousel-dot active" onclick="scrollToSlide(0)"></div>
-                    <div class="carousel-dot" onclick="scrollToSlide(1)"></div>
-                    <div class="carousel-dot" onclick="scrollToSlide(2)"></div>
-                    <div class="carousel-dot" onclick="scrollToSlide(3)"></div>
-                    <div class="carousel-dot" onclick="scrollToSlide(4)"></div>
-                    <div class="carousel-dot" onclick="scrollToSlide(5)"></div>
+      <!-- Mobile Single Tab View -->
+<div class="mobile-carousel">
+    <div class="mobile-single-tab">
+        <!-- Tab 1: Data Chaos Assessment -->
+        <div class="mobile-tab-container" data-tab="1">
+            <div class="mobile-tab-header">
+                <div class="mobile-tab-icon icon-assess">1</div>
+                <div class="mobile-tab-info">
+                    <h3>Data Chaos Assessment</h3>
+                    <p>Audit scattered files and broken processes</p>
                 </div>
             </div>
+            <div class="mobile-tab-content">
+                <p class="mobile-tab-description">We start by understanding the full scope of your data nightmare - from Excel files with #REF! errors to email chains about missing numbers.</p>
+                <ul class="mobile-tab-benefits">
+                    <li>Complete audit of all data sources</li>
+                    <li>Identify broken formulas and inconsistencies</li>
+                    <li>Map communication gaps between teams</li>
+                    <li>Document current pain points and bottlenecks</li>
+                </ul>
+            </div>
         </div>
+        
+        <!-- Continue with tabs 2-6... -->
     </div>
+</div>
+                
+                
 </section>
   
 <!-- Client Logos -->
