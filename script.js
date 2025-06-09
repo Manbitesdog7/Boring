@@ -1,48 +1,4 @@
-// BoringBI Enhanced JavaScript - Fixed and Improved
-
-// Typewriter Effect for Hero Section
-class TypewriterEffect {
-    constructor(element, words, speed = 100, deleteSpeed = 50, pauseTime = 2000) {
-        this.element = element;
-        this.words = words;
-        this.speed = speed;
-        this.deleteSpeed = deleteSpeed;
-        this.pauseTime = pauseTime;
-        this.currentWordIndex = 0;
-        this.currentText = '';
-        this.isDeleting = false;
-        this.start();
-    }
-    
-    start() {
-        this.type();
-    }
-    
-    type() {
-        const currentWord = this.words[this.currentWordIndex];
-        
-        if (this.isDeleting) {
-            this.currentText = currentWord.substring(0, this.currentText.length - 1);
-        } else {
-            this.currentText = currentWord.substring(0, this.currentText.length + 1);
-        }
-        
-        this.element.textContent = this.currentText;
-        
-        let timeout = this.isDeleting ? this.deleteSpeed : this.speed;
-        
-        if (!this.isDeleting && this.currentText === currentWord) {
-            timeout = this.pauseTime;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.currentText === '') {
-            this.isDeleting = false;
-            this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
-            timeout = 500;
-        }
-        
-        setTimeout(() => this.type(), timeout);
-    }
-}
+// BoringBI Enhanced JavaScript - Complete Updated Version
 
 // Enhanced Service Tabs Function - Fixed
 function showService(serviceId) {
@@ -90,31 +46,71 @@ function toggleTab(tab) {
     }
 }
 
-// Fixed Mobile Carousel - Consistent Sizing
-function scrollToSlide(index) {
-    const carousel = document.getElementById('carousel');
-    if (!carousel) return;
-    
-    const slideWidth = 280; // Consistent with CSS
-    carousel.scrollTo({
-        left: index * slideWidth,
-        behavior: 'smooth'
-    });
-    
-    updateActiveDot(index);
+// Document Stack Animation Toggle - CLICK TO SCATTER/CLOSE
+function initDocumentStackToggle() {
+    const documentStack = document.querySelector('.document-stack');
+    if (documentStack) {
+        documentStack.addEventListener('click', function() {
+            this.classList.toggle('scattered');
+        });
+    }
 }
 
-// Enhanced Active Dot Update
-function updateActiveDot(forceIndex = null) {
-    const carousel = document.getElementById('carousel');
-    if (!carousel) return;
-    
-    const slideWidth = 280; // Consistent with CSS
-    const currentSlide = forceIndex !== null ? forceIndex : Math.round(carousel.scrollLeft / slideWidth);
-    
-    document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-    });
+// Mobile Horizontal Scroll Cards (Browserbase Style) - NEW
+function initMobileHorizontalScroll() {
+    if (window.innerWidth <= 768) {
+        const carousel = document.getElementById('mobileCarousel');
+        const dots = document.querySelectorAll('.mobile-dot');
+        
+        if (carousel && dots.length > 0) {
+            // Update active dot on scroll
+            carousel.addEventListener('scroll', () => {
+                const cardWidth = carousel.offsetWidth;
+                const scrollLeft = carousel.scrollLeft;
+                const activeIndex = Math.round(scrollLeft / cardWidth);
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            });
+            
+            // Click dots to scroll to card
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    const cardWidth = carousel.offsetWidth;
+                    carousel.scrollTo({
+                        left: index * cardWidth,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+    }
+}
+
+// Mobile Single Tab Animation on Scroll (Legacy - for fallback)
+function initMobileTabAnimation() {
+    if (window.innerWidth <= 768) {
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all mobile tab containers (if they exist)
+        document.querySelectorAll('.mobile-tab-container').forEach(tab => {
+            observer.observe(tab);
+        });
+    }
 }
 
 // Smooth Scroll for Navigation Links
@@ -184,57 +180,6 @@ function initScrollAnimations() {
     });
 }
 
-// Enhanced Page Load Initialization
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('BoringBI site loading...');
-    
-    // Initialize typewriter effect
-    const rotatingTextElement = document.querySelector('.rotating-text');
-    if (rotatingTextElement) {
-        const words = [
-            'Spreadsheet Chaos',
-            'Data Mess',
-            'Manual Reports',
-            'Excel Hell',
-            'Broken Dashboards'
-        ];
-        new TypewriterEffect(rotatingTextElement, words);
-    }
-    
-    // Set first service tab as active
-    const firstServiceTab = document.querySelector('.service-tab');
-    const firstServiceDetail = document.querySelector('.service-detail');
-    if (firstServiceTab && firstServiceDetail) {
-        firstServiceTab.classList.add('active');
-        firstServiceDetail.classList.add('active');
-    }
-    
-    // Set first feature tab as active
-    const firstFeatureTab = document.querySelector('.feature-tab');
-    if (firstFeatureTab) {
-        firstFeatureTab.classList.add('active');
-    }
-    
-    // Initialize mobile carousel
-    const carousel = document.getElementById('carousel');
-    if (carousel) {
-        carousel.addEventListener('scroll', () => updateActiveDot());
-        
-        // Set first dot as active
-        const firstDot = document.querySelector('.carousel-dot');
-        if (firstDot) {
-            firstDot.classList.add('active');
-        }
-    }
-    
-    // Initialize other features
-    initSmoothScroll();
-    handleFormSubmission();
-    initScrollAnimations();
-    
-    console.log('BoringBI site fully loaded!');
-});
-
 // Performance: Debounce scroll events
 function debounce(func, wait) {
     let timeout;
@@ -247,15 +192,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Apply debouncing to carousel scroll
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.getElementById('carousel');
-    if (carousel) {
-        const debouncedUpdate = debounce(updateActiveDot, 100);
-        carousel.addEventListener('scroll', debouncedUpdate);
-    }
-});
 
 // Utility: Check if element is in viewport
 function isInViewport(element) {
@@ -290,34 +226,19 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-// Mobile Single Tab Animation on Scroll
-function initMobileTabAnimation() {
-    if (window.innerWidth <= 768) {
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all mobile tab containers
-        document.querySelectorAll('.mobile-tab-container').forEach(tab => {
-            observer.observe(tab);
-        });
-    }
-}
 
-// Update your DOMContentLoaded event
+// MAIN INITIALIZATION - COMBINED ALL FUNCTIONALITY
 document.addEventListener('DOMContentLoaded', function() {
     console.log('BoringBI site loading...');
+    
+    // Initialize document stack click toggle
+    initDocumentStackToggle();
+    
+    // Initialize mobile horizontal scroll (NEW BROWSERBASE STYLE)
+    initMobileHorizontalScroll();
+    
+    // Initialize legacy mobile tab animation (fallback)
+    initMobileTabAnimation();
     
     // Set first service tab as active
     const firstServiceTab = document.querySelector('.service-tab');
@@ -333,11 +254,11 @@ document.addEventListener('DOMContentLoaded', function() {
         firstFeatureTab.classList.add('active');
     }
     
-    // Initialize mobile tab animation
-    initMobileTabAnimation();
-    
-    // Re-initialize on window resize
-    window.addEventListener('resize', initMobileTabAnimation);
+    // Re-initialize mobile functions on window resize
+    window.addEventListener('resize', debounce(function() {
+        initMobileHorizontalScroll();
+        initMobileTabAnimation();
+    }, 250));
     
     // Initialize other features
     initSmoothScroll();

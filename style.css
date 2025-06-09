@@ -896,14 +896,14 @@ body {
 }
 
 /* Mobile Carousel Styles - Hidden by default */
-
 .mobile-carousel {
     display: none;
 }
 
 .mobile-single-tab {
-    display: none; /* Will be shown on mobile */
+    display: none;
 }
+
 .carousel-container {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -1320,24 +1320,137 @@ body {
         display: none;
     }
     
-    /* SHOW MOBILE SINGLE TAB VIEW */
+    /* HIDE OLD MOBILE STYLES */
     .mobile-single-tab {
-    display: block;
-    max-width: 600px;
-    margin: 0 auto;
+        display: none;
     }
     
-    /* HIDE THE HORIZONTAL CAROUSEL */
     .mobile-carousel {
-    display: block;
+        display: none;
     }
     
     .carousel-container {
-    display: none;
+        display: none;
     }
-
-.carousel-dots {
-    display: none;
+    
+    .carousel-dots {
+        display: none;
+    }
+    
+    /* BROWSERBASE-STYLE MOBILE CARDS */
+    .mobile-cards-container {
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+    
+    .mobile-cards-scroll {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .mobile-cards-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .mobile-feature-card {
+        flex: 0 0 calc(100vw - 60px);
+        scroll-snap-align: start;
+        background: #F9FAFB;
+        border: 1px solid #E5E7EB;
+        border-radius: 16px;
+        padding: 32px 24px;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .mobile-card-icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    
+    .card-icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: white;
+    }
+    
+    .mobile-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 12px;
+        text-align: center;
+        line-height: 1.3;
+    }
+    
+    .mobile-card-subtitle {
+        font-size: 1rem;
+        color: #6B7280;
+        text-align: center;
+        margin-bottom: 32px;
+        line-height: 1.4;
+    }
+    
+    .mobile-card-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+    }
+    
+    .mobile-card-benefits li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 0;
+        font-size: 0.95rem;
+        color: #374151;
+        line-height: 1.5;
+    }
+    
+    .mobile-card-benefits li::before {
+        content: "●";
+        color: #DC2626;
+        font-weight: 900;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    /* Dot Navigation */
+    .mobile-dots-navigation {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+        padding: 0 20px;
+    }
+    
+    .mobile-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #D1D5DB;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-dot.active {
+        background: #111827;
+        transform: scale(1.2);
     }
     
     /* MOBILE TAB STYLES */
