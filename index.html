@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoringBI - The Boring Stuff That Makes Your Data Shine</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="boringbi-favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="boringbi-favicon-new.svg">
     <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
@@ -13,8 +13,19 @@
     <!-- Header -->
   <header class="header">
     <nav class="nav">
-       <div class="logo">
-    <img src="boringbi-logo.svg" alt="BoringBI" width="180" height="54">
+ <div class="logo">
+    <a href="/" class="boringbi-logo-browserbase">
+        <svg class="boringbi-icon" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="4" fill="#DC2626" transform="rotate(-2 16 16)"/>
+            <text x="16" y="20" 
+                  font-family="Inter, Arial, sans-serif" 
+                  font-size="18" 
+                  font-weight="bold" 
+                  fill="white" 
+                  text-anchor="middle">b</text>
+        </svg>
+        <span class="boringbi-text">boringbi</span>
+    </a>
 </div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
@@ -29,13 +40,10 @@
 
    <!-- Hero Section -->
 
+<!-- Hero Section -->
 <section class="hero">
     <div class="hero-container">
-        <h1>"Boring Code. Beautiful Dashboards."
-            <span class="rotating-text-container">
-                <span class="rotating-text"></span>
-            </span>
-        </h1>
+        <h1>Boring Code. Beautiful Dashboards.</h1>
         <p class="hero-subtitle">We build calm, structured BI systems using Power BI, Azure, and SQL. No drama. No jargon. Just clean pipelines, trusted models, and dashboards that finally make sense.</p>
         
         <div class="hero-buttons">
