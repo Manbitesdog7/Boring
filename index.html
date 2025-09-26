@@ -2,36 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Transform your scattered Excel files and data chaos into beautiful Power BI dashboards. We handle the boring data engineering so your insights can shine.">
+    <meta name="keywords" content="Power BI, Data Engineering, Azure Data Factory, Business Intelligence, Data Analytics, Dashboard Development">
+    <meta name="author" content="BoringBI">
+    <meta property="og:title" content="BoringBI - The Boring Stuff That Makes Your Data Shine">
+    <meta property="og:description" content="Transform your scattered Excel files and data chaos into beautiful Power BI dashboards. We handle the boring data engineering so your insights can shine.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="boringbi-favicon-new.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BoringBI - The Boring Stuff That Makes Your Data Shine">
+    <meta name="twitter:description" content="Transform your scattered Excel files and data chaos into beautiful Power BI dashboards.">
+    <meta name="theme-color" content="#DC2626">
     <title>BoringBI - The Boring Stuff That Makes Your Data Shine</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="boringbi-favicon-new.svg">
     <link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#hero-title" class="skip-to-content">Skip to main content</a>
+
     <!-- Header -->
   <header class="header">
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
  <div class="logo">
-    <a href="/" class="boringbi-logo-browserbase">
+    <a href="/" class="boringbi-logo-browserbase" aria-label="BoringBI Homepage">
         <svg class="boringbi-icon" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <rect width="32" height="32" rx="4" fill="#DC2626" transform="rotate(-2 16 16)"/>
-            <text x="16" y="20" 
-                  font-family="Inter, Arial, sans-serif" 
-                  font-size="18" 
-                  font-weight="bold" 
-                  fill="white" 
+            <text x="16" y="20"
+                  font-family="Inter, Arial, sans-serif"
+                  font-size="18"
+                  font-weight="bold"
+                  fill="white"
                   text-anchor="middle">b</text>
         </svg>
         <span class="boringbi-text">boringbi</span>
     </a>
 </div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links" role="menubar">
+            <li role="none"><a href="#services" role="menuitem">Services</a></li>
+            <li role="none"><a href="#process" role="menuitem">Process</a></li>
+            <li role="none"><a href="#examples" role="menuitem">Examples</a></li>
+            <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
         </ul>
         <a href="#contact" class="btn-primary">Start Free Discovery</a>
     </nav>
@@ -41,14 +64,14 @@
    <!-- Hero Section -->
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-title">
     <div class="hero-container">
-        <h1>Boring Code. Beautiful Dashboards.</h1>
+        <h1 id="hero-title">Boring Code. Beautiful Dashboards.</h1>
         <p class="hero-subtitle">We build calm, structured BI systems using Power BI, Azure, and SQL. No drama. No jargon. Just clean pipelines, trusted models, and dashboards that finally make sense.</p>
-        
-        <div class="hero-buttons">
-            <a href="#contact" class="btn-primary btn-large">Start Your Free Discovery</a>
-            <a href="#examples" class="btn-secondary btn-large">See Examples</a>
+
+        <div class="hero-buttons" role="group" aria-label="Call to action buttons">
+            <a href="#contact" class="btn-primary btn-large" role="button">Start Your Free Discovery</a>
+            <a href="#examples" class="btn-secondary btn-large" role="button">See Examples</a>
         </div>
     </div>
 </section>
@@ -411,23 +434,23 @@
     </section>
     
     <!-- Interactive Services Section -->
-    <section class="services">
+    <section class="services" id="services" aria-labelledby="services-title">
         <div class="services-container">
-            <h2>What makes data boring... but brilliant</h2>
+            <h2 id="services-title">What makes data boring... but brilliant</h2>
             <p class="section-subtitle">The essential foundations that turn chaos into competitive advantage</p>
-            
+
             <!-- Service Selector -->
-            <div class="service-selector">
-                <button class="service-tab active" onclick="showService('engineering')">Data Engineering</button>
-                <button class="service-tab" onclick="showService('dashboards')">Power BI Dashboards</button>
-                <button class="service-tab" onclick="showService('modeling')">Data Modeling</button>
-                <button class="service-tab" onclick="showService('automation')">Process Automation</button>
-                <button class="service-tab" onclick="showService('advisory')">Strategic Advisory</button>
+            <div class="service-selector" role="tablist" aria-label="Service categories">
+                <button class="service-tab active" onclick="showService('engineering')" role="tab" aria-selected="true" aria-controls="engineering" id="tab-engineering">Data Engineering</button>
+                <button class="service-tab" onclick="showService('dashboards')" role="tab" aria-selected="false" aria-controls="dashboards" id="tab-dashboards">Power BI Dashboards</button>
+                <button class="service-tab" onclick="showService('modeling')" role="tab" aria-selected="false" aria-controls="modeling" id="tab-modeling">Data Modeling</button>
+                <button class="service-tab" onclick="showService('automation')" role="tab" aria-selected="false" aria-controls="automation" id="tab-automation">Process Automation</button>
+                <button class="service-tab" onclick="showService('advisory')" role="tab" aria-selected="false" aria-controls="advisory" id="tab-advisory">Strategic Advisory</button>
             </div>
 
             <!-- Service Details -->
             <div class="service-details">
-                <div id="engineering" class="service-detail active">
+                <div id="engineering" class="service-detail active" role="tabpanel" aria-labelledby="tab-engineering">
                     <div class="service-content">
                         <div class="service-visual">
                             <div class="visual-placeholder">
@@ -550,9 +573,9 @@
         </div>
     </section>
 <!-- How It Works -->
-    <section class="process">
+    <section class="process" id="process" aria-labelledby="process-title">
         <div class="process-container">
-            <h2>From chaos to clarity in 3 steps</h2>
+            <h2 id="process-title">From chaos to clarity in 3 steps</h2>
             <p class="section-subtitle">Our proven process transforms your data landscape without disrupting your business</p>
             
             <div class="steps-grid">
@@ -649,11 +672,11 @@
         </div>
     </section>
 <!-- Contact CTA -->
-    <section class="contact-cta">
+    <section class="contact-cta" id="contact" aria-labelledby="contact-title">
         <div class="contact-container">
-            <h2>Ready to make your data work?</h2>
+            <h2 id="contact-title">Ready to make your data work?</h2>
             <p class="contact-subtitle">Let's uncover what your data is trying to tell you. Free discovery session—no sales pitch, just insights.</p>
-            <a href="mailto:hello@boringbi.com" class="btn-primary btn-large">Book Your Free Discovery</a>
+            <a href="mailto:hello@boringbi.com" class="btn-primary btn-large" role="button" aria-label="Send email to hello@boringbi.com to book your free discovery session">Book Your Free Discovery</a>
         </div>
     </section>
 
@@ -689,6 +712,32 @@
         </div>
     </div>
 </footer>
-<script src="script.js"></script>
+<!-- Scripts loaded at the end for better performance -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="script.js" defer></script>
+
+<!-- Add mobile menu toggle functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Close menu when clicking on nav links
+        navLinks.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
