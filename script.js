@@ -1,6 +1,11 @@
-// BoringBI Enhanced JavaScript - Complete Updated Version
+/* ===================================
+   BORINGBI - BROWSERBASE-INSPIRED JAVASCRIPT
+   Complete Script File
+   =================================== */
 
-// Enhanced Service Tabs Function - Fixed
+/* ===================================
+   1. SERVICE TABS FUNCTION
+   =================================== */
 function showService(serviceId) {
     // Hide all service details
     document.querySelectorAll('.service-detail').forEach(detail => {
@@ -10,6 +15,7 @@ function showService(serviceId) {
     // Remove active class from all tabs
     document.querySelectorAll('.service-tab').forEach(tab => {
         tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
     });
     
     // Show selected service detail
@@ -18,14 +24,17 @@ function showService(serviceId) {
         targetService.classList.add('active');
     }
     
-    // Add active class to clicked tab - Fixed event handling
+    // Add active class to clicked tab
     const clickedTab = document.querySelector(`[onclick="showService('${serviceId}')"]`);
     if (clickedTab) {
         clickedTab.classList.add('active');
+        clickedTab.setAttribute('aria-selected', 'true');
     }
 }
 
-// Enhanced Feature Tabs with Better Animation
+/* ===================================
+   2. FEATURE TABS TOGGLE (Desktop Accordion)
+   =================================== */
 function toggleTab(tab) {
     const isCurrentlyActive = tab.classList.contains('active');
     
@@ -46,7 +55,9 @@ function toggleTab(tab) {
     }
 }
 
-// Document Stack Animation Toggle - CLICK TO SCATTER/CLOSE
+/* ===================================
+   3. DOCUMENT STACK ANIMATION - CLICK TO SCATTER/CLOSE
+   =================================== */
 function initDocumentStackToggle() {
     const documentStack = document.querySelector('.document-stack');
     if (documentStack) {
@@ -56,7 +67,9 @@ function initDocumentStackToggle() {
     }
 }
 
-// Mobile Horizontal Scroll Cards (Browserbase Style) - NEW
+/* ===================================
+   4. MOBILE HORIZONTAL SCROLL (BROWSERBASE STYLE)
+   =================================== */
 function initMobileHorizontalScroll() {
     if (window.innerWidth <= 768) {
         const carousel = document.getElementById('mobileCarousel');
@@ -88,48 +101,75 @@ function initMobileHorizontalScroll() {
     }
 }
 
-// Mobile Single Tab Animation on Scroll (Legacy - for fallback)
-function initMobileTabAnimation() {
-    if (window.innerWidth <= 768) {
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all mobile tab containers (if they exist)
-        document.querySelectorAll('.mobile-tab-container').forEach(tab => {
-            observer.observe(tab);
-        });
-    }
-}
-
-// Smooth Scroll for Navigation Links
+/* ===================================
+   5. SMOOTH SCROLL FOR NAVIGATION LINKS
+   =================================== */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // Don't prevent default for empty anchors
+            if (href === '#' || href === '') return;
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
+            
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+                
+                // Close mobile menu if open
+                const navLinks = document.querySelector('.nav-links');
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                if (navLinks && navLinks.classList.contains('mobile-open')) {
+                    navLinks.classList.remove('mobile-open');
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
             }
         });
     });
 }
 
-// Form Handling (if you have contact forms)
+/* ===================================
+   6. MOBILE MENU TOGGLE
+   =================================== */
+function initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Close menu when clicking on nav links
+        navLinks.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('mobile-open');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+}
+
+/* ===================================
+   7. FORM HANDLING (IF YOU HAVE CONTACT FORMS)
+   =================================== */
 function handleFormSubmission() {
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
@@ -138,25 +178,32 @@ function handleFormSubmission() {
             
             // Add loading state
             const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with your actual logic)
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
+            if (submitBtn) {
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission (replace with your actual logic)
                 setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    form.reset();
-                }, 2000);
-            }, 1000);
+                    submitBtn.textContent = 'Message Sent!';
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        form.reset();
+                    }, 2000);
+                }, 1000);
+            }
         });
     });
 }
 
-// Intersection Observer for Animations
+/* ===================================
+   8. INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
+   =================================== */
 function initScrollAnimations() {
+    // Check if browser supports IntersectionObserver
+    if (!('IntersectionObserver' in window)) return;
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -172,7 +219,8 @@ function initScrollAnimations() {
     }, observerOptions);
     
     // Observe elements that should animate in
-    document.querySelectorAll('.service-card, .demo-card, .testimonial-card').forEach(el => {
+    const animatedElements = document.querySelectorAll('.svc-card, .service-card, .step, .testimonial-card');
+    animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -180,7 +228,9 @@ function initScrollAnimations() {
     });
 }
 
-// Performance: Debounce scroll events
+/* ===================================
+   9. DEBOUNCE UTILITY FUNCTION
+   =================================== */
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -193,7 +243,9 @@ function debounce(func, wait) {
     };
 }
 
-// Utility: Check if element is in viewport
+/* ===================================
+   10. CHECK IF ELEMENT IS IN VIEWPORT
+   =================================== */
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -204,66 +256,219 @@ function isInViewport(element) {
     );
 }
 
-// Add keyboard navigation for accessibility
-document.addEventListener('keydown', function(e) {
-    // Tab navigation for service tabs
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        const activeTab = document.querySelector('.service-tab.active');
-        if (activeTab && document.activeElement === activeTab) {
-            e.preventDefault();
-            const tabs = [...document.querySelectorAll('.service-tab')];
-            const currentIndex = tabs.indexOf(activeTab);
-            let newIndex;
-            
-            if (e.key === 'ArrowLeft') {
-                newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
-            } else {
-                newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+/* ===================================
+   11. KEYBOARD NAVIGATION FOR ACCESSIBILITY
+   =================================== */
+function initKeyboardNavigation() {
+    document.addEventListener('keydown', function(e) {
+        // Tab navigation for service tabs
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const activeTab = document.querySelector('.service-tab.active');
+            if (activeTab && document.activeElement === activeTab) {
+                e.preventDefault();
+                const tabs = [...document.querySelectorAll('.service-tab')];
+                const currentIndex = tabs.indexOf(activeTab);
+                let newIndex;
+                
+                if (e.key === 'ArrowLeft') {
+                    newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+                } else {
+                    newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+                }
+                
+                tabs[newIndex].click();
+                tabs[newIndex].focus();
             }
-            
-            tabs[newIndex].click();
-            tabs[newIndex].focus();
         }
-    }
-});
+        
+        // Escape key to close mobile menu
+        if (e.key === 'Escape') {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (navLinks && navLinks.classList.contains('mobile-open')) {
+                navLinks.classList.remove('mobile-open');
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.focus();
+                }
+            }
+        }
+    });
+}
 
-// MAIN INITIALIZATION - COMBINED ALL FUNCTIONALITY
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('BoringBI site loading...');
+/* ===================================
+   12. PREVENT HORIZONTAL SCROLL ON MOBILE
+   =================================== */
+function preventHorizontalScroll() {
+    // Ensure body doesn't scroll horizontally
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
     
-    // Initialize document stack click toggle
-    initDocumentStackToggle();
+    // Check for elements that might cause horizontal scroll
+    const checkOverflow = debounce(() => {
+        const windowWidth = window.innerWidth;
+        const bodyWidth = document.body.scrollWidth;
+        
+        if (bodyWidth > windowWidth) {
+            console.warn('Horizontal overflow detected. Body width:', bodyWidth, 'Window width:', windowWidth);
+        }
+    }, 250);
     
-    // Initialize mobile horizontal scroll (NEW BROWSERBASE STYLE)
-    initMobileHorizontalScroll();
-    
-    // Initialize legacy mobile tab animation (fallback)
-    initMobileTabAnimation();
-    
+    window.addEventListener('resize', checkOverflow);
+    checkOverflow();
+}
+
+/* ===================================
+   13. INITIALIZE ACTIVE STATES ON LOAD
+   =================================== */
+function initActiveStates() {
     // Set first service tab as active
     const firstServiceTab = document.querySelector('.service-tab');
     const firstServiceDetail = document.querySelector('.service-detail');
     if (firstServiceTab && firstServiceDetail) {
         firstServiceTab.classList.add('active');
+        firstServiceTab.setAttribute('aria-selected', 'true');
         firstServiceDetail.classList.add('active');
     }
     
-    // Set first feature tab as active
+    // Set first feature tab as active (desktop)
     const firstFeatureTab = document.querySelector('.feature-tab');
     if (firstFeatureTab) {
         firstFeatureTab.classList.add('active');
     }
     
-    // Re-initialize mobile functions on window resize
-    window.addEventListener('resize', debounce(function() {
+    // Set first mobile dot as active
+    const firstDot = document.querySelector('.mobile-dot');
+    if (firstDot) {
+        firstDot.classList.add('active');
+    }
+}
+
+/* ===================================
+   14. HANDLE WINDOW RESIZE
+   =================================== */
+function handleResize() {
+    const debouncedResize = debounce(() => {
+        // Re-initialize mobile functions
         initMobileHorizontalScroll();
-        initMobileTabAnimation();
-    }, 250));
+        
+        // Close mobile menu on desktop
+        if (window.innerWidth > 768) {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (navLinks && navLinks.classList.contains('mobile-open')) {
+                navLinks.classList.remove('mobile-open');
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }
+    }, 250);
     
-    // Initialize other features
-    initSmoothScroll();
-    handleFormSubmission();
-    initScrollAnimations();
+    window.addEventListener('resize', debouncedResize);
+}
+
+/* ===================================
+   15. PERFORMANCE: LAZY LOAD IMAGES (IF NEEDED)
+   =================================== */
+function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        });
+        
+        // Observe all images with data-src attribute
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+/* ===================================
+   16. ADD LOADING STATE TO CTA BUTTONS
+   =================================== */
+function initCTAButtons() {
+    const ctaButtons = document.querySelectorAll('.btn-primary, .btn-primary-big');
+    ctaButtons.forEach(button => {
+        if (button.getAttribute('href') && button.getAttribute('href').startsWith('mailto:')) {
+            button.addEventListener('click', function() {
+                // Optional: Track email clicks
+                console.log('Email CTA clicked:', this.getAttribute('href'));
+            });
+        }
+    });
+}
+
+/* ===================================
+   17. MAIN INITIALIZATION - RUNS ON PAGE LOAD
+   =================================== */
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 BoringBI site loading...');
     
-    console.log('BoringBI site fully loaded!');
+    try {
+        // Core functionality
+        initDocumentStackToggle();
+        initMobileHorizontalScroll();
+        initMobileMenu();
+        initSmoothScroll();
+        initActiveStates();
+        
+        // Enhanced functionality
+        handleFormSubmission();
+        initScrollAnimations();
+        initKeyboardNavigation();
+        initCTAButtons();
+        initLazyLoading();
+        
+        // Window resize handler
+        handleResize();
+        
+        // Prevent horizontal scroll
+        preventHorizontalScroll();
+        
+        console.log('✅ BoringBI site fully loaded!');
+    } catch (error) {
+        console.error('❌ Error initializing site:', error);
+    }
 });
+
+/* ===================================
+   18. HANDLE PAGE VISIBILITY CHANGES
+   =================================== */
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        console.log('👋 User switched away from tab');
+    } else {
+        console.log('👀 User returned to tab');
+    }
+});
+
+/* ===================================
+   19. EXPOSE FUNCTIONS TO GLOBAL SCOPE (FOR HTML ONCLICK)
+   =================================== */
+window.showService = showService;
+window.toggleTab = toggleTab;
+
+/* ===================================
+   20. ERROR HANDLING
+   =================================== */
+window.addEventListener('error', function(e) {
+    console.error('JavaScript error:', e.error);
+});
+
+window.addEventListener('unhandledrejection', function(e) {
+    console.error('Unhandled promise rejection:', e.reason);
+});
+
+/* ===================================
+   END OF SCRIPT
+   =================================== */
