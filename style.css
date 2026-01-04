@@ -1,6 +1,6 @@
 /* ===================================
    BORINGBI - BROWSERBASE-INSPIRED CSS
-   Complete Stylesheet
+   Complete Stylesheet with Red/White Fabric Animation
    =================================== */
 
 /* ===================================
@@ -293,7 +293,7 @@ section, .container, .hero, .services, .footer {
     font-size: 13px;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .hero h1,
@@ -329,6 +329,362 @@ section, .container, .hero, .services, .footer {
     font-size: 14px;
     color: var(--text-muted);
     font-weight: 500;
+}
+
+/* ===================================
+   FABRIC WORKLOAD CARDS ANIMATION - RED/WHITE THEME
+   =================================== */
+.fabric-animation {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 48px;
+    padding: 20px;
+}
+
+.fabric-cards {
+    position: relative;
+    width: 280px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+/* Base card styling - RED theme */
+.fabric-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    border-radius: 12px;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.fabric-card.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Card 1: KPI Metric */
+.card-kpi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kpi-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.kpi-trend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: auto;
+}
+
+.trend-arrow {
+    color: #FEF2F2;
+    font-size: 20px;
+}
+
+.trend-percent {
+    color: #FEF2F2;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+}
+
+/* Card 2: Chart Visualization */
+.card-chart {
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: 'Courier New', monospace;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 100px;
+    margin-bottom: 12px;
+}
+
+.bar {
+    flex: 1;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
+    border-radius: 3px 3px 0 0;
+    min-height: 20px;
+    position: relative;
+}
+
+.bar::before,
+.bar::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.bar::before {
+    top: -8px;
+    height: 8px;
+}
+
+.bar::after {
+    bottom: -8px;
+    height: 8px;
+}
+
+.chart-axis {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: auto;
+}
+
+/* Card 3: Data Lakehouse - RED/WHITE THEME */
+.card-lakehouse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lakehouse-title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.lakehouse-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: auto;
+}
+
+.lakehouse-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.lakehouse-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Warehouse icon - building shape */
+.lakehouse-icon.warehouse::before {
+    content: '';
+    width: 24px;
+    height: 20px;
+    border: 2px solid #FFFFFF;
+    border-bottom: none;
+    background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+}
+
+.lakehouse-icon.warehouse::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 10px solid #FFFFFF;
+}
+
+/* Lake icon - waves */
+.lakehouse-icon.lake {
+    overflow: hidden;
+}
+
+.lakehouse-icon.lake::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 4px,
+        rgba(255, 255, 255, 0.4) 4px,
+        rgba(255, 255, 255, 0.4) 8px
+    );
+    border-radius: 50%;
+    animation: waveFloat 3s ease-in-out infinite;
+}
+
+@keyframes waveFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* House icon - lakehouse */
+.lakehouse-icon.house::before {
+    content: '';
+    width: 24px;
+    height: 18px;
+    border: 2px solid #FFFFFF;
+    border-top: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lakehouse-icon.house::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 12px solid #FFFFFF;
+}
+
+.lakehouse-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lakehouse-operator {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 -4px;
+}
+
+/* Card 4: Notebook */
+.card-notebook {
+    display: flex;
+    flex-direction: column;
+}
+
+.notebook-header {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.notebook-code {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+}
+
+.code-line {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.line-num {
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 40px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.code-text {
+    color: #FFFFFF;
+}
+
+.code-blue {
+    color: #BFDBFE;
+}
+
+.code-green {
+    color: #FEF2F2;
+}
+
+/* Animation cycle - 4 cards, 3 seconds each = 12 second loop */
+@keyframes cardCycle1 {
+    0%, 25% { opacity: 1; }
+    29%, 100% { opacity: 0; }
+}
+
+@keyframes cardCycle2 {
+    0%, 21% { opacity: 0; }
+    25%, 50% { opacity: 1; }
+    54%, 100% { opacity: 0; }
+}
+
+@keyframes cardCycle3 {
+    0%, 46% { opacity: 0; }
+    50%, 75% { opacity: 1; }
+    79%, 100% { opacity: 0; }
+}
+
+@keyframes cardCycle4 {
+    0%, 71% { opacity: 0; }
+    75%, 96% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.card-kpi {
+    animation: cardCycle1 12s ease-in-out infinite;
+}
+
+.card-chart {
+    animation: cardCycle2 12s ease-in-out infinite;
+}
+
+.card-lakehouse {
+    animation: cardCycle3 12s ease-in-out infinite;
+}
+
+.card-notebook {
+    animation: cardCycle4 12s ease-in-out infinite;
 }
 
 /* ===================================
@@ -801,6 +1157,24 @@ section, .container, .hero, .services, .footer {
     margin: 0 auto 20px;
 }
 
+/* SVG Icon Container for Services Grid */
+.svc-icon-svg {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto 20px;
+    padding: 12px;
+}
+
+.svc-icon-svg svg {
+    width: 32px;
+    height: 32px;
+}
+
 .icon-red { background: #DC2626; }
 .icon-green { background: #059669; }
 .icon-blue { background: #0284C7; }
@@ -837,7 +1211,7 @@ section, .container, .hero, .services, .footer {
     line-height: 1.5;
 }
 
-/* Service Selector & Details (existing service tabs) */
+/* Service Selector & Details */
 .service-selector {
     display: flex;
     justify-content: center;
@@ -1414,7 +1788,45 @@ section, .container, .hero, .services, .footer {
         width: 100%;
     }
     
-    /* Client Logos - 2 columns on mobile */
+    /* Fabric Animation */
+    .fabric-animation {
+        max-width: 280px;
+        margin: 0 auto 32px;
+        padding: 15px;
+    }
+    
+    .fabric-cards {
+        width: 250px;
+        height: 180px;
+    }
+    
+    .fabric-card {
+        padding: 20px;
+    }
+    
+    .kpi-value {
+        font-size: 40px;
+    }
+    
+    .lakehouse-title,
+    .notebook-header {
+        font-size: 12px;
+    }
+    
+    .lakehouse-icon {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .lakehouse-label {
+        font-size: 8px;
+    }
+    
+    .lakehouse-operator {
+        font-size: 20px;
+    }
+    
+    /* Client Logos */
     .client-logos {
         padding: 48px 20px;
     }
@@ -1431,38 +1843,28 @@ section, .container, .hero, .services, .footer {
         font-size: 12px;
     }
     
-    /* Transformation Section - CRITICAL MOBILE FIXES */
+    /* Transformation Section */
     .transformation-section {
         padding: 60px 0;
-        overflow-x: hidden;
     }
     
     .container {
         padding: 0 20px;
-        width: 100%;
-        max-width: 100vw;
-    }
-    
-    .section-header {
-        margin-bottom: 40px;
     }
     
     .section-title {
         font-size: 32px;
-        padding: 0 10px;
     }
     
     .section-subtitle {
         font-size: 16px;
-        padding: 0 10px;
     }
     
-    /* Document Animation - Smaller, Centered */
+    /* Document Animation */
     .document-container {
         height: 350px;
         max-width: 280px;
         margin: 0 auto 40px;
-        padding: 0;
     }
     
     .document-stack {
@@ -1479,180 +1881,38 @@ section, .container, .hero, .services, .footer {
         display: none;
     }
     
-    /* HIDE desktop tabs on mobile */
+    /* Hide desktop tabs */
     .features-tabs {
         display: none;
     }
     
-    /* SHOW mobile carousel */
+    /* Show mobile carousel */
     .mobile-carousel {
         display: block;
-        width: 100%;
-        overflow: hidden;
     }
     
-    .mobile-cards-container {
-        width: 100%;
-        padding: 0;
-    }
-    
-    .mobile-cards-scroll {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        gap: 20px;
-        padding: 0 20px 20px;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .mobile-cards-scroll::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .mobile-feature-card {
-        flex: 0 0 calc(100vw - 60px);
-        scroll-snap-align: start;
-        background: var(--bg-light);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 32px 24px;
-        min-height: 420px;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .mobile-card-icon {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 24px;
-    }
-    
-    .card-icon-circle {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: white;
-    }
-    
-    .mobile-card-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        margin-bottom: 12px;
-        text-align: center;
-        line-height: 1.3;
-    }
-    
-    .mobile-card-subtitle {
-        font-size: 1rem;
-        color: var(--text-muted);
-        text-align: center;
-        margin-bottom: 32px;
-        line-height: 1.4;
-    }
-    
-    .mobile-card-benefits {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        flex-grow: 1;
-    }
-    
-    .mobile-card-benefits li {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 10px 0;
-        font-size: 0.95rem;
-        color: var(--text-secondary);
-        line-height: 1.5;
-    }
-    
-    .mobile-card-benefits li::before {
-        content: "●";
-        color: var(--red-primary);
-        font-weight: 900;
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-    
-    /* Dot Navigation */
-    .mobile-dots-navigation {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 24px;
-        padding: 0 20px;
-    }
-    
-    .mobile-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #D1D5DB;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    
-    .mobile-dot.active {
-        background: var(--text-primary);
-        transform: scale(1.3);
-    }
-    
-    /* Services - 2 columns on mobile */
+    /* Services */
     .services {
         padding: 80px 20px;
     }
     
-    .services h2,
-    #services-title {
+    .services h2 {
         font-size: 32px;
     }
     
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-        margin-top: 48px;
     }
     
     .svc-card {
         padding: 24px 16px;
     }
     
-    .svc-icon {
+    .svc-icon,
+    .svc-icon-svg {
         width: 48px;
         height: 48px;
-        font-size: 1.2rem;
-    }
-    
-    .svc-title {
-        font-size: 16px;
-    }
-    
-    .svc-desc {
-        font-size: 13px;
-    }
-    
-    .service-selector {
-        gap: 6px;
-    }
-    
-    .service-tab {
-        padding: 8px 14px;
-        font-size: 13px;
-    }
-    
-    .service-content {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 24px;
     }
     
     /* Process */
@@ -1660,19 +1920,12 @@ section, .container, .hero, .services, .footer {
         padding: 80px 20px;
     }
     
-    .process h2,
-    #process-title {
+    .process h2 {
         font-size: 32px;
     }
     
     .steps-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-        margin-top: 48px;
-    }
-    
-    .step {
-        padding: 32px 24px;
     }
     
     /* Testimonials */
@@ -1686,12 +1939,6 @@ section, .container, .hero, .services, .footer {
     
     .testimonials-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-        margin-top: 48px;
-    }
-    
-    .testimonial-card {
-        padding: 24px;
     }
     
     /* Contact CTA */
@@ -1701,28 +1948,11 @@ section, .container, .hero, .services, .footer {
     }
     
     .contact-cta h2,
-    .final-cta h2,
-    #contact-title,
-    .cta-h2 {
+    .final-cta h2 {
         font-size: 32px;
     }
     
-    .contact-subtitle,
-    .cta-sub {
-        font-size: 16px;
-    }
-    
-    .cta-btns {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .cta-btns .btn-primary-big,
-    .cta-btns .btn-secondary-big {
-        width: 100%;
-    }
-    
-    /* Footer - Stack vertically on mobile */
+    /* Footer */
     .footer {
         padding: 48px 20px 24px;
     }
@@ -1735,43 +1965,31 @@ section, .container, .hero, .services, .footer {
     .footer-bottom {
         flex-direction: column;
         gap: 12px;
-        text-align: center;
     }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
     .hero h1,
     .hero #hero-title {
         font-size: 32px;
     }
     
-    .section-title {
-        font-size: 28px;
+    .fabric-animation {
+        padding: 10px;
     }
     
-    .document-container {
-        height: 300px;
+    .fabric-cards {
+        width: 100%;
         max-width: 240px;
+        height: 170px;
     }
     
-    .document-stack {
-        width: 220px;
-        height: 270px;
+    .fabric-card {
+        padding: 18px;
     }
     
-    .document-sheet {
-        width: 180px;
-        height: 230px;
-    }
-    
-    .mobile-feature-card {
-        flex: 0 0 calc(100vw - 40px);
-        padding: 24px 20px;
-        min-height: 400px;
-    }
-    
-    .mobile-card-title {
-        font-size: 1.3rem;
+    .lakehouse-icon {
+        width: 38px;
+        height: 38px;
     }
 }

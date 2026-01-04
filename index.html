@@ -61,24 +61,121 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-container">
-                <div class="credential-badge">
-                    ✓ Microsoft Certified: PL-300 • DP-203 • DP-700
+        <!-- Hero Section -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero-container">
+        <div class="credential-badge">
+            ✓ Microsoft Certified: PL-300 • DP-203 • DP-700
+        </div>
+        
+        <!-- Fabric Workload Cards Animation -->
+        <div class="fabric-animation">
+            <div class="fabric-cards">
+                <!-- Card 1: KPI Metric -->
+                <div class="fabric-card card-kpi active">
+                    <div class="kpi-value">7.7K</div>
+                    <div class="kpi-trend">
+                        <span class="trend-arrow">▲</span>
+                        <span class="trend-percent">13.15%</span>
+                    </div>
+                    <div class="card-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
                 
-                <h1 id="hero-title">We turn data chaos into clarity.</h1>
-                
-                <p class="hero-subtitle">Power BI, Azure, and data solutions for businesses drowning in spreadsheets. No jargon. No drama. Just results.</p>
-                
-                <div class="hero-buttons" role="group" aria-label="Call to action buttons">
-                    <a href="#contact" class="btn-primary btn-large" role="button">Start Free Discovery</a>
-                    <a href="#transformation" class="btn-secondary btn-large" role="button">See How It Works</a>
+                <!-- Card 2: Chart Visualization -->
+                <div class="fabric-card card-chart">
+                    <div class="chart-label">OUT [1]</div>
+                    <div class="chart-bars">
+                        <div class="bar" style="height: 35%;"></div>
+                        <div class="bar" style="height: 25%;"></div>
+                        <div class="bar" style="height: 45%;"></div>
+                        <div class="bar" style="height: 50%;"></div>
+                        <div class="bar" style="height: 55%;"></div>
+                        <div class="bar" style="height: 60%;"></div>
+                        <div class="bar" style="height: 70%;"></div>
+                        <div class="bar" style="height: 80%;"></div>
+                    </div>
+                    <div class="chart-axis">
+                        <span>0</span>
+                        <span>2</span>
+                        <span>4</span>
+                    </div>
                 </div>
                 
-                <p class="trust">Trusted by 50+ European businesses escaping Excel hell</p>
+                <!-- Card 3: Data Pipeline -->
+                <div class="fabric-card card-pipeline">
+                    <div class="pipeline-title">Pipeline</div>
+                    <div class="pipeline-flow">
+                        <div class="pipeline-node source">
+                            <div class="node-icon">📊</div>
+                            <div class="node-label">Source</div>
+                        </div>
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-node transform">
+                            <div class="node-icon">⚙️</div>
+                            <div class="node-label">Transform</div>
+                        </div>
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-node destination">
+                            <div class="node-icon">💾</div>
+                            <div class="node-label">Load</div>
+                        </div>
+                    </div>
+                    <div class="pipeline-status">
+                        <span class="status-dot success"></span>
+                        <span class="status-text">Running</span>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Notebook -->
+                <div class="fabric-card card-notebook">
+                    <div class="notebook-header">Notebook</div>
+                    <div class="notebook-code">
+                        <div class="code-line">
+                            <span class="line-num">IN [1]</span>
+                            <span class="code-text code-blue">import</span>
+                            <span class="code-text">pandas</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-num">2</span>
+                            <span class="code-text">df = </span>
+                            <span class="code-text code-green">"table"</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-num">3</span>
+                            <span class="code-text code-blue">SELECT</span>
+                            <span class="code-text"> *</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-num">4</span>
+                            <span class="code-text code-blue">FROM</span>
+                            <span class="code-text"> data</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-num">5</span>
+                            <span class="code-text">df.head()</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+        
+        <h1 id="hero-title">We turn data chaos into clarity.</h1>
+        
+        <p class="hero-subtitle">Power BI, Azure, and data solutions for businesses drowning in spreadsheets. No jargon. No drama. Just results.</p>
+        
+        <div class="hero-buttons" role="group" aria-label="Call to action buttons">
+            <a href="#contact" class="btn-primary btn-large" role="button">Start Free Discovery</a>
+            <a href="#transformation" class="btn-secondary btn-large" role="button">See How It Works</a>
+        </div>
+        
+        <p class="trust">Trusted by 50+ European businesses escaping Excel hell</p>
+    </div>
+</section>
 
         <!-- Client Logos -->
         <section class="client-logos">
