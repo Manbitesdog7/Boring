@@ -257,9 +257,28 @@ section, .container, .hero, .services, .footer {
     position: relative;
 }
 
+/* FAINT GRID BACKGROUND */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(229, 231, 235, 0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(229, 231, 235, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 1;
+}
+
 .hero-container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* Credential Badge */
@@ -708,12 +727,32 @@ section, .container, .hero, .services, .footer {
 .services {
     background: var(--bg-white);
     padding: 100px 32px;
+    position: relative;
+}
+
+/* FAINT GRID BACKGROUND */
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(229, 231, 235, 0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(229, 231, 235, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
 }
 
 .services-container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .services h2,
@@ -1137,6 +1176,25 @@ section, .container, .hero, .services, .footer {
     padding: 100px 32px;
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+/* FAINT GRID BACKGROUND (WHITE ON RED) */
+.contact-cta::before,
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: 1;
 }
 
 .contact-container,
@@ -1268,6 +1326,36 @@ section, .container, .hero, .services, .footer {
 .footer-creds {
     font-family: 'Courier New', monospace;
     font-size: 12px;
+}
+
+/* Footer Social Icons */
+.footer-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.footer-social svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* ===================================
