@@ -2,671 +2,693 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="From messy data to calm, trusted insights. Power BI dashboards built on solid foundations: data ingestion, orchestration, semantic modeling, and automation.">
-    <meta name="keywords" content="Power BI, Semantic Modeling, Data Engineering, Business Intelligence, OneLake, Lakehouse, Data Analytics, DP-700, Power BI Consultant">
-    <meta name="author" content="BoringBI">
-    <meta property="og:title" content="BoringBI - Turn Data Chaos into Clarity">
-    <meta property="og:description" content="Power BI, Azure, and data solutions for businesses drowning in spreadsheets. No jargon. No drama. Just results.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BoringBI - Turn Data Chaos into Clarity">
-    <meta name="twitter:description" content="Power BI dashboards built on solid foundations: semantic modeling, orchestration, and automation.">
-    <meta name="theme-color" content="#DC2626">
-    
-    <!-- Updated Favicons -->
-    <link rel="icon" type="image/svg+xml" href="favicon-final.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
-    <title>BoringBI - Turn Data Chaos into Clarity</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoringBI - The Boring Stuff That Makes Your Data Shine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="boringbi-favicon-new.svg">
     <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
     <!-- Header -->
-    <header class="header">
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-            <!-- Updated Logo: Just text "boring bi" -->
-            <div class="logo">
-                <a href="/" class="logo-text-link" aria-label="BoringBI Homepage">
-                    boring bi
-                </a>
-            </div>
+  <header class="header">
+    <nav class="nav">
+ <div class="logo">
+    <a href="/" class="boringbi-logo-browserbase">
+        <svg class="boringbi-icon" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="4" fill="#DC2626" transform="rotate(-2 16 16)"/>
+            <text x="16" y="20" 
+                  font-family="Inter, Arial, sans-serif" 
+                  font-size="18" 
+                  font-weight="bold" 
+                  fill="white" 
+                  text-anchor="middle">b</text>
+        </svg>
+        <span class="boringbi-text">boringbi</span>
+    </a>
+</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-primary">Start Free Discovery</a>
+    </nav>
+</header>
 
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
 
-            <ul class="nav-links" id="nav-links" role="menubar">
-                <li role="none"><a href="#services" role="menuitem">Services</a></li>
-                <li role="none"><a href="#process" role="menuitem">Process</a></li>
-                <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
-                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-            </ul>
-            <a href="#contact" class="btn-primary">Start Free Discovery</a>
-        </nav>
-    </header>
+   <!-- Hero Section -->
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-<section class="hero" aria-labelledby="hero-title">
+<!-- Hero Section -->
+<section class="hero">
     <div class="hero-container">
-        <div class="credential-badge">
-            ✓ Microsoft Certified: PL-300 • DP-203 • DP-700
+        <h1>Boring Code. Beautiful Dashboards.</h1>
+        <p class="hero-subtitle">We build calm, structured BI systems using Power BI, Azure, and SQL. No drama. No jargon. Just clean pipelines, trusted models, and dashboards that finally make sense.</p>
+        
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary btn-large">Start Your Free Discovery</a>
+            <a href="#examples" class="btn-secondary btn-large">See Examples</a>
         </div>
-        
-        <h1 id="hero-title">We turn data chaos into clarity.</h1>
-        
-        <p class="hero-subtitle">Power BI, Azure, and data solutions for businesses drowning in spreadsheets. No jargon. No drama. Just results.</p>
-        
-        <div class="hero-buttons" role="group" aria-label="Call to action buttons">
-            <a href="#contact" class="btn-primary btn-large" role="button">Start Free Discovery</a>
-            <a href="#transformation" class="btn-secondary btn-large" role="button">See How It Works</a>
-        </div>
-        
-        <p class="trust">Trusted by 50+ European businesses escaping Excel hell</p>
     </div>
 </section>
-
-        <!-- Client Logos -->
-        <section class="client-logos">
-            <div class="client-logos-container">
-                <p class="clients-heading">Trusted by forward-thinking businesses across Europe</p>
-                <div class="clients-grid">
-                    <div class="client-logo">Manufacturing Solutions Ltd</div>
-                    <div class="client-logo">Retail Analytics Group</div>
-                    <div class="client-logo">Professional Services Co</div>
-                    <div class="client-logo">Healthcare Systems</div>
-                    <div class="client-logo">Financial Planning Inc</div>
-                    <div class="client-logo">Tech Startup GmbH</div>
+<section class="transformation-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">See the Transformation</h2>
+            <p class="section-subtitle">From scattered document chaos to unified Power BI dashboards - here's how we handle the boring so your data can shine.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Left Side: Document Stack Animation -->
+            <div class="document-container">
+                <div class="document-stack">
+                    <!-- Excel Sheet (Top) -->
+                    <div class="document-sheet excel-sheet">
+                        <div class="excel-grid"></div>
+                        <div class="excel-data" style="top: 24px; left: 32px;">A1: Customer_ID</div>
+                        <div class="excel-data" style="top: 24px; left: 120px;">B1: Revenue</div>
+                        <div class="excel-data" style="top: 24px; left: 200px;">C1: Date</div>
+                        <div class="excel-data" style="top: 44px; left: 32px;">12847</div>
+                        <div class="excel-data" style="top: 44px; left: 120px;">=SUM(B2:B47)</div>
+                        <div class="excel-data" style="top: 44px; left: 200px;">2024-01-15</div>
+                        <div class="excel-data" style="top: 64px; left: 32px;">98234</div>
+                        <div class="excel-data" style="top: 64px; left: 120px;">#REF!</div>
+                        <div class="excel-data" style="top: 64px; left: 200px;">2024-01-16</div>
+                        <div class="excel-data" style="top: 84px; left: 32px;">45621</div>
+                        <div class="excel-data" style="top: 84px; left: 120px;">€2,847.50</div>
+                        <div class="excel-data" style="top: 84px; left: 200px;">#VALUE!</div>
+                    </div>
+                    
+                    <!-- Word Document -->
+                    <div class="document-sheet word-sheet">
+                        <div class="word-lines">
+                            <div class="word-line">
+                                <div class="word-text">Q4 Sales Report - DRAFT v3</div>
+                            </div>
+                            <div class="word-line"></div>
+                            <div class="word-line">
+                                <div class="word-text">Revenue numbers from Excel sheet</div>
+                            </div>
+                            <div class="word-line">
+                                <div class="word-text">Need to verify with finance team</div>
+                            </div>
+                            <div class="word-line"></div>
+                            <div class="word-line">
+                                <div class="word-text">URGENT: Fix discrepancies before</div>
+                            </div>
+                            <div class="word-line">
+                                <div class="word-text">board meeting tomorrow!</div>
+                            </div>
+                            <div class="word-line"></div>
+                            <div class="word-line">
+                                <div class="word-text">NOTE: John's numbers don't match</div>
+                            </div>
+                            <div class="word-line">
+                                <div class="word-text">Sarah's calculations...</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email/Note -->
+                    <div class="document-sheet email-sheet">
+                        <div class="email-header">
+                            From: finance@company.com | Subject: RE: Monthly Report Data
+                        </div>
+                        <div class="email-content">
+                            Hi Sarah,<br><br>
+                            I've attached the updated customer data but there are still some issues with the revenue calculations. The VLOOKUP formulas are returning errors and I can't figure out why.<br><br>
+                            Can you take a look? The board meeting is tomorrow and we need clean numbers.<br><br>
+                            Also, the CSV export from our CRM has duplicate entries again...<br><br>
+                            Thanks,<br>
+                            John
+                        </div>
+                    </div>
+                    
+                    <!-- CSV Data -->
+                    <div class="document-sheet csv-sheet">
+                        <div class="csv-content">
+                            customer_id,order_date,amount,status<br>
+                            12847,"2024-01-15",2847.50,"paid"<br>
+                            98234,"2024-01-16",NULL,"pending"<br>
+                            45621,"2024/01/17",1200,"paid"<br>
+                            12847,"2024-01-15",2847.50,"paid"<br>
+                            NULL,"2024-01-18",500.75,"error"<br>
+                            78392,"Jan 19 2024",750.00,"paid"<br>
+                            45621,"2024-01-17",,"cancelled"<br>
+                            99999,"",1500.00,"unknown"<br>
+                            12847,"2024-01-15",2847.50,"paid"<br>
+                            55566,"2024-01-20",NULL,NULL<br>
+                            <br>
+                            // Duplicate entries detected<br>
+                            // Inconsistent date formats<br>
+                            // Missing values found
+                        </div>
+                    </div>
+                </div>
+                <div class="hover-hint">
+                    Hover to see the data chaos unfold
                 </div>
             </div>
-        </section>
-
-        <!-- Transformation Section -->
-        <section class="transformation-section" id="transformation">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">From messy data to calm, trusted insights</h2>
-                    <p class="section-subtitle">Built on solid foundations — from scattered spreadsheets to unified Power BI dashboards that finally make sense.</p>
-                </div>
-                
-                <div class="features-grid">
-                    <!-- Document Stack Animation -->
-                    <div class="document-container">
-                        <div class="document-stack">
-                            <!-- Excel Sheet -->
-                            <div class="document-sheet excel-sheet">
-                                <div class="excel-grid"></div>
-                                <div class="excel-data" style="top: 24px; left: 32px;">A1: Customer_ID</div>
-                                <div class="excel-data" style="top: 24px; left: 120px;">B1: Revenue</div>
-                                <div class="excel-data" style="top: 24px; left: 200px;">C1: Date</div>
-                                <div class="excel-data" style="top: 44px; left: 32px;">12847</div>
-                                <div class="excel-data" style="top: 44px; left: 120px;">=SUM(B2:B47)</div>
-                                <div class="excel-data" style="top: 44px; left: 200px;">2024-01-15</div>
-                                <div class="excel-data" style="top: 64px; left: 32px;">98234</div>
-                                <div class="excel-data" style="top: 64px; left: 120px;">#REF!</div>
-                                <div class="excel-data" style="top: 64px; left: 200px;">2024-01-16</div>
-                                <div class="excel-data" style="top: 84px; left: 32px;">45621</div>
-                                <div class="excel-data" style="top: 84px; left: 120px;">€2,847.50</div>
-                                <div class="excel-data" style="top: 84px; left: 200px;">#VALUE!</div>
-                            </div>
-                            
-                            <!-- Word Document -->
-                            <div class="document-sheet word-sheet">
-                                <div class="word-lines">
-                                    <div class="word-line">
-                                        <div class="word-text">Q4 Sales Report - DRAFT v3</div>
-                                    </div>
-                                    <div class="word-line"></div>
-                                    <div class="word-line">
-                                        <div class="word-text">Revenue numbers from Excel sheet</div>
-                                    </div>
-                                    <div class="word-line">
-                                        <div class="word-text">Need to verify with finance team</div>
-                                    </div>
-                                    <div class="word-line"></div>
-                                    <div class="word-line">
-                                        <div class="word-text">URGENT: Fix discrepancies before</div>
-                                    </div>
-                                    <div class="word-line">
-                                        <div class="word-text">board meeting tomorrow!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Email/Note -->
-                            <div class="document-sheet email-sheet">
-                                <div class="email-header">
-                                    From: finance@company.com | Subject: RE: Monthly Report Data
-                                </div>
-                                <div class="email-content">
-                                    Hi Sarah,<br><br>
-                                    I've attached the updated customer data but there are still some issues with the revenue calculations. The VLOOKUP formulas are returning errors...<br><br>
-                                    Can you take a look? The board meeting is tomorrow.<br><br>
-                                    Thanks,<br>
-                                    John
-                                </div>
-                            </div>
-                            
-                            <!-- CSV Data -->
-                            <div class="document-sheet csv-sheet">
-                                <div class="csv-content">
-                                    customer_id,order_date,amount,status<br>
-                                    12847,"2024-01-15",2847.50,"paid"<br>
-                                    98234,"2024-01-16",NULL,"pending"<br>
-                                    45621,"2024/01/17",1200,"paid"<br>
-                                    12847,"2024-01-15",2847.50,"paid"<br>
-                                    NULL,"2024-01-18",500.75,"error"<br>
-                                    78392,"Jan 19 2024",750.00,"paid"<br>
-                                    <br>
-                                    // Duplicate entries detected<br>
-                                    // Inconsistent date formats<br>
-                                    // Missing values found
-                                </div>
-                            </div>
+            
+            <!-- Right Side: Feature Tabs (Desktop) -->
+            <div class="features-tabs">
+                <div class="feature-tab active" onclick="toggleTab(this)">
+                    <div class="tab-header">
+                        <div class="tab-icon icon-assess">1</div>
+                        <div>
+                            <div class="tab-title">Data Chaos Assessment</div>
+                            <div class="tab-summary">Audit scattered files and broken processes</div>
                         </div>
-                        <div class="hover-hint">
-                            Click to see the chaos unfold
-                        </div>
+                        <div class="tab-expand">↓</div>
                     </div>
-                    
-                    <!-- Desktop Feature Tabs -->
-                    <div class="features-tabs">
-                        <!-- Tab 1: Data Chaos Assessment -->
-                        <div class="feature-tab active" onclick="toggleTab(this)">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-assess">1</div>
-                                <div>
-                                    <div class="tab-title">Data Chaos Assessment</div>
-                                    <div class="tab-summary">Audit scattered files and broken processes</div>
-                                </div>
-                                <div class="tab-expand">↓</div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We start by understanding the full scope of your data nightmare - from Excel files with #REF! errors to email chains about missing numbers.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Complete audit of all data sources</li>
-                                        <li>Identify broken formulas and inconsistencies</li>
-                                        <li>Map communication gaps between teams</li>
-                                        <li>Document current pain points and bottlenecks</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tab 2: Data Ingestion & Integration -->
-                        <div class="feature-tab" onclick="toggleTab(this)">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-engineer">2</div>
-                                <div>
-                                    <div class="tab-title">Data Ingestion & Integration</div>
-                                    <div class="tab-summary">Bring all data together, automatically</div>
-                                </div>
-                                <div class="tab-expand">↓</div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We ingest data from your source systems using automated pipelines and connectors, removing fragile manual processes and ensuring data arrives consistently.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Ingest data from all core systems automatically</li>
-                                        <li>Scheduled, automated, and monitored pipelines</li>
-                                        <li>Built-in validation and failure handling</li>
-                                        <li>Designed to scale without increasing complexity</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tab 3: Orchestration & Automation -->
-                        <div class="feature-tab" onclick="toggleTab(this)">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-pipeline">3</div>
-                                <div>
-                                    <div class="tab-title">Orchestration & Automation</div>
-                                    <div class="tab-summary">Reliable, hands-off data workflows</div>
-                                </div>
-                                <div class="tab-expand">↓</div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We orchestrate your data workflows so everything runs in the right order, at the right time — without anyone checking if a refresh "worked".</p>
-                                    <ul class="tab-benefits">
-                                        <li>End-to-end workflow orchestration</li>
-                                        <li>Monitoring, alerts, and retry logic</li>
-                                        <li>Clear lineage and run history</li>
-                                        <li>No separate tooling to maintain</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tab 4: Data Preparation & Quality -->
-                        <div class="feature-tab" onclick="toggleTab(this)">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-clean">4</div>
-                                <div>
-                                    <div class="tab-title">Data Preparation & Quality</div>
-                                    <div class="tab-summary">Clean, standardised data in the Lakehouse</div>
-                                </div>
-                                <div class="tab-expand">↓</div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">Inside the Lakehouse, we clean, standardise, and structure your data so every report starts from the same trusted foundation.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Standardised formats and business rules</li>
-                                        <li>De-duplication and data quality checks</li>
-                                        <li>Clear separation of raw and curated data</li>
-                                        <li>A single, trustworthy source of truth</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tab 5: Semantic Modeling -->
-                        <div class="feature-tab" onclick="toggleTab(this)">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-model">5</div>
-                                <div>
-                                    <div class="tab-title">Semantic Modeling</div>
-                                    <div class="tab-summary">A governed, business-friendly data layer</div>
-                                </div>
-                                <div class="tab-expand">↓</div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">We design semantic models that turn tables into meaning — with clear measures, definitions, and relationships that everyone agrees on.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Centralised metrics and KPIs</li>
-                                        <li>Fast, optimised query performance</li>
-                                        <li>Business-friendly naming and logic</li>
-                                        <li>Reusable across multiple reports</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tab 6: Power BI Insights -->
-                        <div class="feature-tab" onclick="toggleTab(this)">
-                            <div class="tab-header">
-                                <div class="tab-icon icon-dashboard">6</div>
-                                <div>
-                                    <div class="tab-title">Power BI Insights</div>
-                                    <div class="tab-summary">Clear insights, built on solid foundations</div>
-                                </div>
-                                <div class="tab-expand">↓</div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-details">
-                                    <p class="tab-description">With the hard work done, Power BI becomes simple. We design clean, focused dashboards that sit directly on top of semantic models — fast, secure, and easy to trust.</p>
-                                    <ul class="tab-benefits">
-                                        <li>Clear, focused dashboards (no noise)</li>
-                                        <li>Row-level security and governed access</li>
-                                        <li>Shared metrics across the business</li>
-                                        <li>Refreshes that just work</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Mobile Carousel (Browserbase Style) -->
-                    <div class="mobile-carousel">
-                        <div class="mobile-cards-container">
-                            <div class="mobile-cards-scroll" id="mobileCarousel">
-                                <!-- Card 1: Data Chaos Assessment -->
-                                <div class="mobile-feature-card">
-                                    <div class="mobile-card-icon">
-                                        <div class="card-icon-circle icon-assess">1</div>
-                                    </div>
-                                    <h3 class="mobile-card-title">Data Chaos Assessment</h3>
-                                    <p class="mobile-card-subtitle">Audit scattered files and broken processes</p>
-                                    <ul class="mobile-card-benefits">
-                                        <li>Complete audit of all data sources</li>
-                                        <li>Identify broken formulas and inconsistencies</li>
-                                        <li>Map communication gaps between teams</li>
-                                        <li>Document current pain points and bottlenecks</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Card 2: Data Ingestion & Integration -->
-                                <div class="mobile-feature-card">
-                                    <div class="mobile-card-icon">
-                                        <div class="card-icon-circle icon-engineer">2</div>
-                                    </div>
-                                    <h3 class="mobile-card-title">Data Ingestion & Integration</h3>
-                                    <p class="mobile-card-subtitle">Bring all data together, automatically</p>
-                                    <ul class="mobile-card-benefits">
-                                        <li>Ingest data from all core systems automatically</li>
-                                        <li>Scheduled, automated, and monitored pipelines</li>
-                                        <li>Built-in validation and failure handling</li>
-                                        <li>Designed to scale without increasing complexity</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Card 3: Orchestration & Automation -->
-                                <div class="mobile-feature-card">
-                                    <div class="mobile-card-icon">
-                                        <div class="card-icon-circle icon-pipeline">3</div>
-                                    </div>
-                                    <h3 class="mobile-card-title">Orchestration & Automation</h3>
-                                    <p class="mobile-card-subtitle">Reliable, hands-off data workflows</p>
-                                    <ul class="mobile-card-benefits">
-                                        <li>End-to-end workflow orchestration</li>
-                                        <li>Monitoring, alerts, and retry logic</li>
-                                        <li>Clear lineage and run history</li>
-                                        <li>No separate tooling to maintain</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Card 4: Data Preparation & Quality -->
-                                <div class="mobile-feature-card">
-                                    <div class="mobile-card-icon">
-                                        <div class="card-icon-circle icon-clean">4</div>
-                                    </div>
-                                    <h3 class="mobile-card-title">Data Preparation & Quality</h3>
-                                    <p class="mobile-card-subtitle">Clean, standardised data in the Lakehouse</p>
-                                    <ul class="mobile-card-benefits">
-                                        <li>Standardised formats and business rules</li>
-                                        <li>De-duplication and data quality checks</li>
-                                        <li>Clear separation of raw and curated data</li>
-                                        <li>A single, trustworthy source of truth</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Card 5: Semantic Modeling -->
-                                <div class="mobile-feature-card">
-                                    <div class="mobile-card-icon">
-                                        <div class="card-icon-circle icon-model">5</div>
-                                    </div>
-                                    <h3 class="mobile-card-title">Semantic Modeling</h3>
-                                    <p class="mobile-card-subtitle">A governed, business-friendly data layer</p>
-                                    <ul class="mobile-card-benefits">
-                                        <li>Centralised metrics and KPIs</li>
-                                        <li>Fast, optimised query performance</li>
-                                        <li>Business-friendly naming and logic</li>
-                                        <li>Reusable across multiple reports</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Card 6: Power BI Insights -->
-                                <div class="mobile-feature-card">
-                                    <div class="mobile-card-icon">
-                                        <div class="card-icon-circle icon-dashboard">6</div>
-                                    </div>
-                                    <h3 class="mobile-card-title">Power BI Insights</h3>
-                                    <p class="mobile-card-subtitle">Clear insights, built on solid foundations</p>
-                                    <ul class="mobile-card-benefits">
-                                        <li>Clear, focused dashboards (no noise)</li>
-                                        <li>Row-level security and governed access</li>
-                                        <li>Shared metrics across the business</li>
-                                        <li>Refreshes that just work</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Dot Navigation -->
-                            <div class="mobile-dots-navigation">
-                                <div class="mobile-dot active" data-slide="0"></div>
-                                <div class="mobile-dot" data-slide="1"></div>
-                                <div class="mobile-dot" data-slide="2"></div>
-                                <div class="mobile-dot" data-slide="3"></div>
-                                <div class="mobile-dot" data-slide="4"></div>
-                                <div class="mobile-dot" data-slide="5"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services" id="services" aria-labelledby="services-title">
-            <div class="services-container">
-                <h2 id="services-title">From chaos to clarity in 6 steps</h2>
-                <p class="section-subtitle">The boring technical work that transforms scattered spreadsheets into executive dashboards.</p>
-
-                <div class="services-grid">
-                    <!-- Service Card 1 -->
-                    <div class="svc-card">
-                        <div class="svc-icon icon-red">1</div>
-                        <h3 class="svc-title">Data Chaos Assessment</h3>
-                        <span class="svc-badge">Core</span>
-                        <p class="svc-desc">Audit scattered files and broken processes</p>
-                    </div>
-                    
-                    <!-- Service Card 2 -->
-                    <div class="svc-card">
-                        <div class="svc-icon icon-green">2</div>
-                        <h3 class="svc-title">Data Ingestion & Integration</h3>
-                        <span class="svc-badge">Core</span>
-                        <p class="svc-desc">Bring all data together, automatically</p>
-                    </div>
-                    
-                    <!-- Service Card 3 -->
-                    <div class="svc-card">
-                        <div class="svc-icon icon-blue">3</div>
-                        <h3 class="svc-title">Orchestration & Automation</h3>
-                        <span class="svc-badge badge-adv">Advanced</span>
-                        <p class="svc-desc">Reliable, hands-off data workflows</p>
-                    </div>
-                    
-                    <!-- Service Card 4 -->
-                    <div class="svc-card">
-                        <div class="svc-icon icon-purple">4</div>
-                        <h3 class="svc-title">Data Preparation & Quality</h3>
-                        <span class="svc-badge">Core</span>
-                        <p class="svc-desc">Clean, standardised data in the Lakehouse</p>
-                    </div>
-                    
-                    <!-- Service Card 5 -->
-                    <div class="svc-card">
-                        <div class="svc-icon icon-orange">5</div>
-                        <h3 class="svc-title">Semantic Modeling</h3>
-                        <span class="svc-badge badge-adv">Advanced</span>
-                        <p class="svc-desc">A governed, business-friendly data layer</p>
-                    </div>
-                    
-                    <!-- Service Card 6 -->
-                    <div class="svc-card">
-                        <div class="svc-icon icon-red">6</div>
-                        <h3 class="svc-title">Power BI Insights</h3>
-                        <span class="svc-badge">Core</span>
-                        <p class="svc-desc">Clear insights, built on solid foundations</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section class="process" id="process" aria-labelledby="process-title">
-            <div class="process-container">
-                <h2 id="process-title">How we work with you</h2>
-                <p class="section-subtitle">Our proven process transforms your data landscape without disrupting your business</p>
-                
-                <div class="steps-grid">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-icon">🔍</div>
-                        <h3>Discovery & Audit</h3>
-                        <p class="step-description">We map your current data ecosystem, identify opportunities, and create a clear roadmap for transformation.</p>
-                        <div class="step-details">
-                            <ul>
-                                <li>Data source assessment</li>
-                                <li>Business requirements gathering</li>
-                                <li>Technical architecture review</li>
-                                <li>ROI opportunity identification</li>
+                    <div class="tab-content">
+                        <div class="tab-details">
+                            <p class="tab-description">We start by understanding the full scope of your data nightmare - from Excel files with #REF! errors to email chains about missing numbers.</p>
+                            <ul class="tab-benefits">
+                                <li>Complete audit of all data sources</li>
+                                <li>Identify broken formulas and inconsistencies</li>
+                                <li>Map communication gaps between teams</li>
+                                <li>Document current pain points and bottlenecks</li>
                             </ul>
                         </div>
                     </div>
-
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-icon">🛠️</div>
-                        <h3>Build & Transform</h3>
-                        <p class="step-description">Using Microsoft's ecosystem, we clean your data, build robust pipelines, and create executive dashboards.</p>
-                        <div class="step-details">
-                            <ul>
-                                <li>Data cleaning & validation</li>
-                                <li>ETL pipeline development</li>
-                                <li>Semantic model creation</li>
-                                <li>Power BI dashboard design</li>
+                </div>
+                
+                <div class="feature-tab" onclick="toggleTab(this)">
+                    <div class="tab-header">
+                        <div class="tab-icon icon-engineer">2</div>
+                        <div>
+                            <div class="tab-title">Data Engineering</div>
+                            <div class="tab-summary">Build robust pipelines and extraction processes</div>
+                        </div>
+                        <div class="tab-expand">↓</div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-details">
+                            <p class="tab-description">The boring backend work begins - we build the technical foundation that automatically handles data extraction, validation, and transformation.</p>
+                            <ul class="tab-benefits">
+                                <li>Automated data extraction from all sources</li>
+                                <li>Robust error handling and validation</li>
+                                <li>Eliminate manual copy-paste processes</li>
+                                <li>Built for scale and reliability</li>
                             </ul>
                         </div>
                     </div>
-
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-icon">🚀</div>
-                        <h3>Deploy & Support</h3>
-                        <p class="step-description">We deploy your solution, ensure everything runs smoothly, and provide ongoing support for your success.</p>
-                        <div class="step-details">
-                            <ul>
-                                <li>Production deployment</li>
-                                <li>Performance monitoring</li>
-                                <li>Documentation & handover</li>
-                                <li>Ongoing maintenance support</li>
+                </div>
+                
+                <div class="feature-tab" onclick="toggleTab(this)">
+                    <div class="tab-header">
+                        <div class="tab-icon icon-pipeline">3</div>
+                        <div>
+                            <div class="tab-title">Azure Data Factory Pipelines</div>
+                            <div class="tab-summary">Orchestrate and automate data workflows</div>
+                        </div>
+                        <div class="tab-expand">↓</div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-details">
+                            <p class="tab-description">ADF pipelines ensure your data flows consistently and reliably, eliminating the "which version is correct?" problem forever.</p>
+                            <ul class="tab-benefits">
+                                <li>Automated scheduling and orchestration</li>
+                                <li>Real-time monitoring and alerts</li>
+                                <li>Error recovery and retry logic</li>
+                                <li>Scalable cloud-native architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="toggleTab(this)">
+                    <div class="tab-header">
+                        <div class="tab-icon icon-clean">4</div>
+                        <div>
+                            <div class="tab-title">Data Cleaning & Standardization</div>
+                            <div class="tab-summary">Fix formats, eliminate duplicates, resolve errors</div>
+                        </div>
+                        <div class="tab-expand">↓</div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-details">
+                            <p class="tab-description">We fix all the messy data issues - standardizing date formats, eliminating duplicates, and creating consistent structures your business can trust.</p>
+                            <ul class="tab-benefits">
+                                <li>Resolve #REF! and #VALUE! errors</li>
+                                <li>Standardize date and number formats</li>
+                                <li>Remove duplicate entries automatically</li>
+                                <li>Create single source of truth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="toggleTab(this)">
+                    <div class="tab-header">
+                        <div class="tab-icon icon-model">5</div>
+                        <div>
+                            <div class="tab-title">Data Modeling</div>
+                            <div class="tab-summary">Design semantic layers and relationships</div>
+                        </div>
+                        <div class="tab-expand">↓</div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-details">
+                            <p class="tab-description">We design semantic layers that connect your customer, sales, and financial data into one coherent, fast-performing model.</p>
+                            <ul class="tab-benefits">
+                                <li>Logical data relationships and hierarchies</li>
+                                <li>Optimized for query performance</li>
+                                <li>Business-friendly naming conventions</li>
+                                <li>Scalable dimensional modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="toggleTab(this)">
+                    <div class="tab-header">
+                        <div class="tab-icon icon-dashboard">6</div>
+                        <div>
+                            <div class="tab-title">Beautiful Power BI Dashboards</div>
+                            <div class="tab-summary">Transform chaos into crystal-clear insights</div>
+                        </div>
+                        <div class="tab-expand">↓</div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-details">
+                            <p class="tab-description">The payoff - stunning, interactive dashboards that turn your former data nightmare into clear, actionable business insights.</p>
+                            <ul class="tab-benefits">
+                                <li>Interactive, real-time visualizations</li>
+                                <li>Mobile-responsive design</li>
+                                <li>Role-based access and security</li>
+                                <li>Automated refresh and alerts</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+      <!-- Mobile Single Tab View -->
 
-        <!-- Testimonials -->
-        <section class="testimonials" id="testimonials">
-            <div class="testimonials-container">
-                <h2>What our clients say</h2>
-                <p class="section-subtitle">Real feedback from businesses that transformed their data landscape</p>
+<div class="mobile-carousel">
+    <div class="mobile-cards-container">
+        <div class="mobile-cards-scroll" id="mobileCarousel">
+            <!-- Card 1: Data Chaos Assessment -->
+            <div class="mobile-feature-card">
+                <div class="mobile-card-icon">
+                    <div class="card-icon-circle icon-assess">1</div>
+                </div>
+                <h3 class="mobile-card-title">Data Chaos Assessment</h3>
+                <p class="mobile-card-subtitle">Audit scattered files and broken processes</p>
+                <ul class="mobile-card-benefits">
+                    <li>Complete audit of all data sources</li>
+                    <li>Identify broken formulas and inconsistencies</li>
+                    <li>Map communication gaps between teams</li>
+                    <li>Document current pain points and bottlenecks</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Data Engineering -->
+            <div class="mobile-feature-card">
+                <div class="mobile-card-icon">
+                    <div class="card-icon-circle icon-engineer">2</div>
+                </div>
+                <h3 class="mobile-card-title">Data Engineering</h3>
+                <p class="mobile-card-subtitle">Build robust pipelines and extraction processes</p>
+                <ul class="mobile-card-benefits">
+                    <li>Automated data extraction from all sources</li>
+                    <li>Robust error handling and validation</li>
+                    <li>Eliminate manual copy-paste processes</li>
+                    <li>Built for scale and reliability</li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Azure Data Factory Pipelines -->
+            <div class="mobile-feature-card">
+                <div class="mobile-card-icon">
+                    <div class="card-icon-circle icon-pipeline">3</div>
+                </div>
+                <h3 class="mobile-card-title">Azure Data Factory Pipelines</h3>
+                <p class="mobile-card-subtitle">Orchestrate and automate data workflows</p>
+                <ul class="mobile-card-benefits">
+                    <li>Automated scheduling and orchestration</li>
+                    <li>Real-time monitoring and alerts</li>
+                    <li>Error recovery and retry logic</li>
+                    <li>Scalable cloud-native architecture</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Data Cleaning & Standardization -->
+            <div class="mobile-feature-card">
+                <div class="mobile-card-icon">
+                    <div class="card-icon-circle icon-clean">4</div>
+                </div>
+                <h3 class="mobile-card-title">Data Cleaning & Standardization</h3>
+                <p class="mobile-card-subtitle">Fix formats, eliminate duplicates, resolve errors</p>
+                <ul class="mobile-card-benefits">
+                    <li>Resolve #REF! and #VALUE! errors</li>
+                    <li>Standardize date and number formats</li>
+                    <li>Remove duplicate entries automatically</li>
+                    <li>Create single source of truth</li>
+                </ul>
+            </div>
+
+            <!-- Card 5: Data Modeling -->
+            <div class="mobile-feature-card">
+                <div class="mobile-card-icon">
+                    <div class="card-icon-circle icon-model">5</div>
+                </div>
+                <h3 class="mobile-card-title">Data Modeling</h3>
+                <p class="mobile-card-subtitle">Design semantic layers and relationships</p>
+                <ul class="mobile-card-benefits">
+                    <li>Logical data relationships and hierarchies</li>
+                    <li>Optimized for query performance</li>
+                    <li>Business-friendly naming conventions</li>
+                    <li>Scalable dimensional modeling</li>
+                </ul>
+            </div>
+
+            <!-- Card 6: Beautiful Power BI Dashboards -->
+            <div class="mobile-feature-card">
+                <div class="mobile-card-icon">
+                    <div class="card-icon-circle icon-dashboard">6</div>
+                </div>
+                <h3 class="mobile-card-title">Beautiful Power BI Dashboards</h3>
+                <p class="mobile-card-subtitle">Transform chaos into crystal-clear insights</p>
+                <ul class="mobile-card-benefits">
+                    <li>Interactive, real-time visualizations</li>
+                    <li>Mobile-responsive design</li>
+                    <li>Role-based access and security</li>
+                    <li>Automated refresh and alerts</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dot Navigation (like Browserbase) -->
+        <div class="mobile-dots-navigation">
+            <div class="mobile-dot active" data-slide="0"></div>
+            <div class="mobile-dot" data-slide="1"></div>
+            <div class="mobile-dot" data-slide="2"></div>
+            <div class="mobile-dot" data-slide="3"></div>
+            <div class="mobile-dot" data-slide="4"></div>
+            <div class="mobile-dot" data-slide="5"></div>
+        </div>
+    </div>
+</div>  
                 
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"BoringBI transformed our 47-tab Excel nightmare into a single executive dashboard. Finally, BI that doesn't require a PhD in data science."</p>
+</section>
+  
+<!-- Client Logos -->
+    <section class="client-logos">
+        <div class="client-logos-container">
+            <p>Trusted by forward-thinking businesses across the UK & Europe</p>
+            <div class="logos-grid">
+                <div class="logo-placeholder">Manufacturing Solutions Ltd</div>
+                <div class="logo-placeholder">Retail Analytics Group</div>
+                <div class="logo-placeholder">Professional Services Co</div>
+                <div class="logo-placeholder">Healthcare Systems</div>
+                <div class="logo-placeholder">Financial Planning Inc</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Services Section -->
+    <section class="services">
+        <div class="services-container">
+            <h2>What makes data boring... but brilliant</h2>
+            <p class="section-subtitle">The essential foundations that turn chaos into competitive advantage</p>
+            
+            <!-- Service Selector -->
+            <div class="service-selector">
+                <button class="service-tab active" onclick="showService('engineering')">Data Engineering</button>
+                <button class="service-tab" onclick="showService('dashboards')">Power BI Dashboards</button>
+                <button class="service-tab" onclick="showService('modeling')">Data Modeling</button>
+                <button class="service-tab" onclick="showService('automation')">Process Automation</button>
+                <button class="service-tab" onclick="showService('advisory')">Strategic Advisory</button>
+            </div>
+
+            <!-- Service Details -->
+            <div class="service-details">
+                <div id="engineering" class="service-detail active">
+                    <div class="service-content">
+                        <div class="service-visual">
+                            <div class="visual-placeholder">
+                                🧹<br>
+                                <small>Azure Data Factory<br>SQL Server<br>Clean Pipelines</small>
+                            </div>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <div class="author-name">Sarah Mitchell</div>
-                                <div class="author-title">Operations Director, Manufacturing Solutions Ltd</div>
+                        <div class="service-info">
+                            <h3>Data Engineering</h3>
+                            <p class="service-description">We transform messy, scattered data into clean, reliable pipelines using Azure Data Factory and SQL Server.</p>
+                            <div class="service-benefits">
+                                <h4>What you get:</h4>
+                                <ul>
+                                    <li>Automated data pipelines</li>
+                                    <li>Quality validation rules</li>
+                                    <li>Error monitoring & alerts</li>
+                                    <li>Scalable architecture</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"No more weekend Excel marathons. Their 'boring' approach to BI is anything but boring when you see the bottom-line impact."</p>
+                <div id="dashboards" class="service-detail">
+                    <div class="service-content">
+                        <div class="service-visual">
+                            <div class="visual-placeholder">
+                                📊<br>
+                                <small>Power BI<br>Interactive Reports<br>Executive Views</small>
+                            </div>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <div class="author-name">James Patterson</div>
-                                <div class="author-title">CEO, Retail Analytics Group</div>
+                        <div class="service-info">
+                            <h3>Power BI Dashboards</h3>
+                            <p class="service-description">Beautiful, interactive dashboards that executives actually use and teams trust for decision-making.</p>
+                            <div class="service-benefits">
+                                <h4>What you get:</h4>
+                                <ul>
+                                    <li>Executive summary views</li>
+                                    <li>Drill-down capabilities</li>
+                                    <li>Mobile-responsive design</li>
+                                    <li>Real-time data refresh</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"They handle all the boring stuff so our data can finally shine. Clean pipelines, trusted models, and dashboards that actually make sense."</p>
+                <div id="modeling" class="service-detail">
+                    <div class="service-content">
+                        <div class="service-visual">
+                            <div class="visual-placeholder">
+                                🏗️<br>
+                                <small>Semantic Models<br>Star Schema<br>Optimized Performance</small>
+                            </div>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <div class="author-name">Emma Thompson</div>
-                                <div class="author-title">Finance Director, Professional Services Co</div>
+                        <div class="service-info">
+                            <h3>Data Modeling</h3>
+                            <p class="service-description">Solid semantic foundations that make your data relationships clear and your calculations accurate.</p>
+                            <div class="service-benefits">
+                                <h4>What you get:</h4>
+                                <ul>
+                                    <li>Optimized data models</li>
+                                    <li>Business logic implementation</li>
+                                    <li>Performance optimization</li>
+                                    <li>Clear documentation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="automation" class="service-detail">
+                    <div class="service-content">
+                        <div class="service-visual">
+                            <div class="visual-placeholder">
+                                ⚡<br>
+                                <small>Power Automate<br>Scheduled Refresh<br>Automated Reports</small>
+                            </div>
+                        </div>
+                        <div class="service-info">
+                            <h3>Process Automation</h3>
+                            <p class="service-description">Eliminate manual reporting tasks with intelligent automation that keeps your insights fresh.</p>
+                            <div class="service-benefits">
+                                <h4>What you get:</h4>
+                                <ul>
+                                    <li>Scheduled data refreshes</li>
+                                    <li>Automated report distribution</li>
+                                    <li>Exception alerting</li>
+                                    <li>Performance monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advisory" class="service-detail">
+                    <div class="service-content">
+                        <div class="service-visual">
+                            <div class="visual-placeholder">
+                                📈<br>
+                                <small>Strategy Roadmaps<br>Technology Advice<br>Growth Planning</small>
+                            </div>
+                        </div>
+                        <div class="service-info">
+                            <h3>Strategic Advisory</h3>
+                            <p class="service-description">Ongoing guidance to help you maximize ROI from your data investments.</p>
+                            <div class="service-benefits">
+                                <h4>What you get:</h4>
+                                <ul>
+                                    <li>Data strategy roadmaps</li>
+                                    <li>Technology recommendations</li>
+                                    <li>Performance optimization</li>
+                                    <li>Growth opportunity identification</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+<!-- How It Works -->
+    <section class="process">
+        <div class="process-container">
+            <h2>From chaos to clarity in 3 steps</h2>
+            <p class="section-subtitle">Our proven process transforms your data landscape without disrupting your business</p>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>Discovery & Audit</h3>
+                    <p class="step-description">We map your current data ecosystem, identify opportunities, and create a clear roadmap for transformation.</p>
+                    <div class="step-details">
+                        <ul>
+                            <li>Data source assessment</li>
+                            <li>Business requirements gathering</li>
+                            <li>Technical architecture review</li>
+                            <li>ROI opportunity identification</li>
+                        </ul>
+                    </div>
+                </div>
 
-        <!-- Contact CTA -->
-        <section class="contact-cta" id="contact" aria-labelledby="contact-title">
-            <div class="contact-container">
-                <h2 id="contact-title">What will your data reveal?</h2>
-                <p class="contact-subtitle">Get started now and turn spreadsheet chaos into dashboard clarity. Free discovery session—no sales pitch, just insights.</p>
-                <a href="mailto:hello@boringbi.com" class="btn-primary-big" role="button" aria-label="Send email to hello@boringbi.com">Book Free Discovery</a>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🛠️</div>
+                    <h3>Build & Transform</h3>
+                    <p class="step-description">Using Microsoft's ecosystem, we clean your data, build robust pipelines, and create executive dashboards.</p>
+                    <div class="step-details">
+                        <ul>
+                            <li>Data cleaning & validation</li>
+                            <li>ETL pipeline development</li>
+                            <li>Semantic model creation</li>
+                            <li>Power BI dashboard design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🚀</div>
+                    <h3>Deploy & Support</h3>
+                    <p class="step-description">We deploy your solution, ensure everything runs smoothly, and provide ongoing support for your success.</p>
+                    <div class="step-details">
+                        <ul>
+                            <li>Production deployment</li>
+                            <li>Performance monitoring</li>
+                            <li>Documentation & handover</li>
+                            <li>Ongoing maintenance support</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+<!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2>What our clients say</h2>
+            <p class="section-subtitle">Real feedback from businesses that transformed their data landscape</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"BoringBI transformed our 47-tab Excel nightmare into a single executive dashboard. Finally, BI that doesn't require a PhD in data science."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Sarah Mitchell</div>
+                            <div class="author-title">Operations Director, Manufacturing Solutions Ltd</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"No more weekend Excel marathons. Their 'boring' approach to BI is anything but boring when you see the bottom-line impact."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">James Patterson</div>
+                            <div class="author-title">CEO, Retail Analytics Group</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"They handle all the boring stuff so our data can finally shine. Clean pipelines, trusted models, and dashboards that actually make sense."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Emma Thompson</div>
+                            <div class="author-title">Finance Director, Professional Services Co</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="contact-container">
+            <h2>Ready to make your data work?</h2>
+            <p class="contact-subtitle">Let's uncover what your data is trying to tell you. Free discovery session—no sales pitch, just insights.</p>
+            <a href="mailto:hello@boringbi.com" class="btn-primary btn-large">Book Your Free Discovery</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <!-- Updated Footer Logo: ** icon -->
-                    <div class="footer-logo-icon">**</div>
-                    <p class="footer-tagline">The most reliable way to build, deploy, and monitor your Business Intelligence.</p>
-                    
-                    <!-- Social Icons -->
-                    <div class="footer-social">
-                        <a href="https://linkedin.com/company/boringbi" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8 11V16M8 8V8.01M12 16V11M16 16V13C16 11.8954 15.1046 11 14 11C12.8954 11 12 11.8954 12 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/boringbi" aria-label="X (Twitter)" target="_blank" rel="noopener">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/boringbi" aria-label="GitHub" target="_blank" rel="noopener">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
-                            </svg>
-                        </a>
-                    </div>
+                <div class="footer-section">
+                    <h4>BoringBI</h4>
+                    <p>The boring stuff that makes your data shine. Built on Microsoft's trusted ecosystem.</p>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul class="footer-links">
                         <li><a href="#services">Data Engineering</a></li>
-                        <li><a href="#services">Power BI</a></li>
-                        <li><a href="#services">Semantic Modeling</a></li>
-                        <li><a href="#services">Data Quality</a></li>
+                        <li><a href="#services">Power BI Dashboards</a></li>
+                        <li><a href="#services">Data Modeling</a></li>
+                        <li><a href="#services">Process Automation</a></li>
+                        <li><a href="#services">Strategic Advisory</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="#testimonials">Case Studies</a></li>
-                        <li><a href="#process">How We Work</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:hello@boringbi.com">hello@boringbi.com</a></li>
-                        <li>Based in Netherlands</li>
-                        <li>Serving UK & Europe</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 BoringBI</p>
-                <p class="footer-creds">PL-300 • DP-203 • DP-700</p>
+ </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@boringbi.com">hello@boringbi.com</a></li>
+                    <li>Based in the Netherlands</li>
+                    <li>Serving the UK & Europe</li>
+                </ul>
             </div>
         </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BoringBI. Making data exciting by keeping it boring.</p>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
