@@ -1481,3 +1481,20 @@ body {
         font-size: 1.15rem;
     }
 }
+/* FORCE ALL ICONS TO BE RED - Add at the very end */
+.svc-icon,
+.tab-icon,
+.card-icon-circle,
+.icon-red,
+.icon-green,
+.icon-blue,
+.icon-purple,
+.icon-orange,
+.icon-assess,
+.icon-engineer,
+.icon-pipeline,
+.icon-clean,
+.icon-model,
+.icon-dashboard {
+    background: #DC2626 !important;
+}
