@@ -613,10 +613,10 @@ body {
 }
 
 .icon-assess { background: #DC2626; }
-.icon-engineer { background: #059669; }
-.icon-pipeline { background: #0284C7; }
-.icon-clean { background: #7C3AED; }
-.icon-model { background: #EA580C; }
+.icon-engineer { background: #DC2626; }
+.icon-pipeline { background: #DC2626; }
+.icon-clean { background: #DC2626; }
+.icon-model { background: #DC2626; }
 .icon-dashboard { background: #DC2626; }
 
 .tab-title {
@@ -884,10 +884,10 @@ body {
 }
 
 .icon-red { background: #DC2626; }
-.icon-green { background: #059669; }
-.icon-blue { background: #0284C7; }
-.icon-purple { background: #7C3AED; }
-.icon-orange { background: #EA580C; }
+.icon-green { background: #DC2626; }
+.icon-blue { background: #DC2626; }
+.icon-purple { background: #DC2626; }
+.icon-orange { background: #DC2626; }
 
 .svc-title {
     font-size: 18px;
