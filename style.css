@@ -229,7 +229,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: var(--bg-white);
+    background: #F9FAFB;
     padding: 100px 32px;
     text-align: center;
     position: relative;
@@ -808,7 +808,7 @@ body {
 
 /* Services Section */
 .services {
-    background: var(--bg-white);
+    background: #F9FAFB;
     padding: 100px 32px;
     position: relative;
 }
@@ -1022,7 +1022,7 @@ body {
 
 /* Testimonials Section */
 .testimonials {
-    background: var(--bg-white);
+    background: #F9FAFB;
     padding: 100px 32px;
 }
 
