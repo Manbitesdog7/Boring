@@ -1315,11 +1315,11 @@ body {
     
     .hero h1,
     .hero #hero-title {
-        font-size: 36px;
+        font-size: 32px;
     }
-    
+
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .hero-buttons {
@@ -1361,7 +1361,9 @@ body {
         font-size: 32px;
     }
     
-    .section-subtitle {
+    .section-subtitle,
+    .contact-subtitle,
+    .cta-sub {
         font-size: 16px;
     }
     
@@ -1397,7 +1399,8 @@ body {
         padding: 80px 20px;
     }
     
-    .services h2 {
+    .services h2,
+    .services #services-title {
         font-size: 32px;
     }
     
@@ -1419,7 +1422,8 @@ body {
         padding: 80px 20px;
     }
     
-    .process h2 {
+    .process h2,
+    .process #process-title {
         font-size: 32px;
     }
     
@@ -1445,7 +1449,8 @@ body {
     }
     
     .contact-cta h2,
-    .final-cta h2 {
+    .final-cta h2,
+    #contact-title {
         font-size: 32px;
     }
     
@@ -1478,7 +1483,19 @@ body {
     }
     
     .mobile-card-title {
-        font-size: 1.15rem;
+        font-size: 1.125rem;
+    }
+
+    .mobile-card-subtitle {
+        font-size: 0.875rem;
+    }
+
+    .svc-title {
+        font-size: 1rem;
+    }
+
+    .svc-desc {
+        font-size: 0.875rem;
     }
 }
 /* FORCE ALL ICONS TO BE RED - Add at the very end */
